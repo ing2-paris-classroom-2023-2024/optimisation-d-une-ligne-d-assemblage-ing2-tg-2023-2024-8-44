@@ -4,15 +4,15 @@
 void lecture(int **tabS1, int **tabS2, int *nbLignes){
     FILE *fichier = NULL;
     char ligne[10];
-    int i=0;
+    int compteur=0;
 
-    fichier = fopen("arete.txt", "r"); // Ouvrir le fichier en mode lecture et vérifier s'il s'ouvre
+    fichier = fopen("arete.txt","r"); // ouverture du fichier
     if (fichier == NULL){
         printf("Erreur ouverture fichier");
         exit(1);
     }
 
-    while (fgets(ligne, sizeof(ligne), fichier) != NULL) { // Compter le nombre de lignes dans le fichier
+    while (fgets(ligne, sizeof(ligne), fichier) != NULL) { //tant qu'on a des lignes on les additionne
         (*nbLignes)++;
     }
 
@@ -22,7 +22,7 @@ void lecture(int **tabS1, int **tabS2, int *nbLignes){
 
     // Retourner une erreur si l'allocation échoue
     if (*tabS1 ==NULL || *tabS2==NULL){
-        perror("Erreur d'allocation de mémoire");
+        printf("Erreur d'allocation de mémoire");
         fclose(fichier);
         free(*tabS1);
         free(*tabS2);
@@ -33,9 +33,9 @@ void lecture(int **tabS1, int **tabS2, int *nbLignes){
     fseek(fichier, 0, SEEK_SET);
 
     // vérifier si la ligne n'est pas vide et si elle contient bien 2 entiers
-    while (fgets(ligne, sizeof(ligne), fichier) != NULL && i < *nbLignes) {
-        if (sscanf(ligne, "%d %d", &(*tabS1)[i], &(*tabS2)[i]) == 2){
-            i++;
+    while (fgets(ligne, sizeof(ligne), fichier) != NULL ){
+        if (sscanf(ligne, "%d %d", &(*tabS1)[compteur], &(*tabS2)[compteur]) == 2){
+            compteur++;
         }
     }
 
@@ -49,11 +49,12 @@ int main(){
 
     lecture(&tabS1, &tabS2, &nbLignes);
 
-    for (int i = 0; i < nbLignes; i++) {            //vérifier les données
+    for (int i=0; i<nbLignes; i++){            //vérifier les données
         printf("%d %d\n", tabS1[i], tabS2[i]);
     }
+    printf("\nNombre de lignes: %d\n", nbLignes);
 
-    // Libérer la mémoire allouée dynamiquement
+    //libérer la memoire
     free(tabS1);
     free(tabS2);
 
