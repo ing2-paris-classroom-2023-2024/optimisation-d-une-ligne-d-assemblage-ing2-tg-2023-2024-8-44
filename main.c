@@ -78,5 +78,6 @@ int main()
     //libérer la memoire
     free(tabPrecedence1);
     free(tabPrecedence2);
+    printf("ca grand ;ere");
     return 0;
 }
