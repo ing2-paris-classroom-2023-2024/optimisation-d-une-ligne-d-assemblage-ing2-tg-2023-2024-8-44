@@ -79,6 +79,6 @@ int main()
     free(tabPrecedence1);
     free(tabPrecedence2);
     printf("ca grand ;ere");
-    printf("test ratio malik");
+    printf("test");
     return 0;
 }
