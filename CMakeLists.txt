@@ -4,5 +4,4 @@ project(project C)
 
 set(CMAKE_C_STANDARD 17)
 
-add_executable(project main.c src/fonction.c include/fonction.h
-        src/test2.c)
+add_executable(project main.c src/fonction.c include/fonction.h)
