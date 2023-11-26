@@ -3,7 +3,7 @@
 //
 #include "stdio.h"
 #include "stdlib.h"
-#include "src/fonction.h"
+#include "precedencesEtTemps.c"
 
 
 void lecture(int **tabS1, int **tabS2, int *nbLignes, char *nomFichier)
