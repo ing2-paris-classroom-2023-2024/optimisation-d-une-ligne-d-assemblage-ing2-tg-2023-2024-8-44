@@ -20,7 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="changes to project problem with cmake debug, problem with lecture fonction">
+    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="test fichier">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +55,7 @@
     "WebServerToolWindowFactoryState": "false",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/mathe/OneDrive/Documents/GitHub/Projet/optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44/CMakeLists.txt",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -74,12 +75,12 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration name="optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project" TARGET_NAME="project" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project" RUN_TARGET_NAME="project">
+    <configuration name="optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project" TARGET_NAME="project" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project" RUN_TARGET_NAME="project">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -175,6 +176,7 @@
     <MESSAGE value="liste des contraintes" />
     <MESSAGE value="contrainte exclusion lire fichier" />
     <MESSAGE value="changes to project problem with cmake debug, problem with lecture fonction" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes to project problem with cmake debug, problem with lecture fonction" />
+    <MESSAGE value="test fichier" />
+    <option name="LAST_COMMIT_MESSAGE" value="test fichier" />
   </component>
 </project>
