@@ -3,16 +3,18 @@
 //
 #include "stdio.h"
 #include "stdlib.h"
-#include "src/fonction.c"
+#include "src/fonction.h"
 
 
 void lecture(int **tabS1, int **tabS2, int *nbLignes, char *nomFichier)
 {
-
-
     FILE *fichier = NULL;
     char ligne[10];
     int compteur=0;
+    int nbLignesLecture = 0;
+
+    int *tabS1Lecture, *tabS2Lecture;
+
 
     fichier = fopen(nomFichier,"r"); // ouverture du fichier
     if (fichier == NULL){
@@ -20,20 +22,23 @@ void lecture(int **tabS1, int **tabS2, int *nbLignes, char *nomFichier)
         exit(1);
     }
 
-    while (fgets(ligne, sizeof(ligne), fichier) != NULL) { //tant qu'on a des lignes on les additionne
-        (*nbLignes)++;
+    while (fgets(ligne,1000,fichier)!=NULL) { //tant qu'on a des lignes on les additionne
+        (nbLignesLecture)++;
     }
 
+    *nbLignes = nbLignesLecture;
     // allocation dynamique
-    *tabS1 = (int*)malloc((*nbLignes)*sizeof(int));
-    *tabS2 = (int*)malloc((*nbLignes)*sizeof(int));
+    tabS1Lecture = malloc((nbLignesLecture+1)*sizeof(int));
+    tabS2Lecture = malloc((nbLignesLecture+1)*sizeof(int));
+
+
 
     // si problème avec les tableaux on sort du programme
-    if (*tabS1 ==NULL || *tabS2==NULL){
+    if (tabS1Lecture ==NULL || tabS2Lecture==NULL){
         printf("Erreur d'allocation de mémoire");
         fclose(fichier);
-        free(*tabS1);
-        free(*tabS2);
+        free(tabS1);
+        free(tabS2);
         exit(1);
     }
 
@@ -41,26 +46,27 @@ void lecture(int **tabS1, int **tabS2, int *nbLignes, char *nomFichier)
     fseek(fichier, 0, SEEK_SET);
 
     // vérifier si la ligne n'est pas vide et si elle contient bien 2 entiers
-    while (fgets(ligne, sizeof(ligne), fichier) != NULL ){
-        if (sscanf(ligne, "%d %d", &(*tabS1)[compteur], &(*tabS2)[compteur]) == 2){
-            compteur++;
-        }
+    while (fgets(ligne, 1000, fichier) != NULL){
+        sscanf(ligne, "%d %d", &tabS1Lecture[compteur], &tabS2Lecture[compteur]);
+        compteur++;
     }
-
+    *tabS1 = tabS1Lecture;
+    *tabS2 = tabS2Lecture;
     fclose(fichier);
 }
 
 
 int main()
 {
-    int *tabPrecedence1, *tabPrecedence2;
-    int *tabTempsCycle1, *tabTempsCycle2;
+    int *tabPrecedence1 , *tabPrecedence2 = NULL;
+    int *tabTempsCycle1 = NULL, *tabTempsCycle2 = NULL;
     int nbLignes = 0;
     char nomFichier[20];
 
     printf("Donnez le nom du fichier precedences:");
     scanf("%s", nomFichier);
     lecture(&tabPrecedence1, &tabPrecedence2, &nbLignes, nomFichier);
+    printf("%d\n",nbLignes);
     for (int i=0; i<nbLignes; i++){            //vérifier les données
         printf("%d %d\n", tabPrecedence1[i], tabPrecedence2[i]);
     }
