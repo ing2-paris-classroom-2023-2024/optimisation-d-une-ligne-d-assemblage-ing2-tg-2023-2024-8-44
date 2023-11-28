@@ -20,9 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="lecture de fichier et changement dans les fichiers .txt">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="lecture de fichier et changement dans les fichiers .txt" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,7 +106,7 @@
       <workItem from="1701007430250" duration="1000" />
       <workItem from="1701089637823" duration="299000" />
       <workItem from="1701102685009" duration="1873000" />
-      <workItem from="1701105279924" duration="4606000" />
+      <workItem from="1701105279924" duration="4799000" />
     </task>
     <task id="LOCAL-00001" summary="liste des contraintes">
       <created>1700130411021</created>
@@ -159,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701109906046</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="lecture de fichier et changement dans les fichiers .txt">
+      <created>1701181512910</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701181512910</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
