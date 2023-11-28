@@ -20,8 +20,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="lecture de fichier et changement dans les fichiers .txt">
+    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="changes to project problem with cmake debug, problem with lecture fonction">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileTexte/liste.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonction.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonction.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonction.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonction.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +113,7 @@
       <workItem from="1701007430250" duration="1000" />
       <workItem from="1701089637823" duration="299000" />
       <workItem from="1701102685009" duration="1873000" />
-      <workItem from="1701105279924" duration="4606000" />
+      <workItem from="1701105279924" duration="2220000" />
     </task>
     <task id="LOCAL-00001" summary="liste des contraintes">
       <created>1700130411021</created>
@@ -152,14 +157,7 @@
       <option name="project" value="LOCAL" />
       <updated>1700950400291</updated>
     </task>
-    <task id="LOCAL-00007" summary="lecture de fichier et changement dans les fichiers .txt">
-      <created>1701109906046</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1701109906046</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,7 +179,6 @@
     <MESSAGE value="contrainte exclusion lire fichier" />
     <MESSAGE value="changes to project problem with cmake debug, problem with lecture fonction" />
     <MESSAGE value="test fichier" />
-    <MESSAGE value="lecture de fichier et changement dans les fichiers .txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="lecture de fichier et changement dans les fichiers .txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="test fichier" />
   </component>
 </project>
