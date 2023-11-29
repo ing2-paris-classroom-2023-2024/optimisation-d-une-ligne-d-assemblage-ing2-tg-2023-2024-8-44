@@ -20,10 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="lecture de fichier et changement dans les fichiers .txt">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonction.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonction.h" afterDir="false" />
-    </list>
+    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="lecture de fichier et changement dans les fichiers .txt" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,12 +54,11 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mathe/OneDrive/Bureau/projetAlgoPrecedenceEtTemps&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mathe/OneDrive/Documents/GitHub/Projet/optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44/CMakeLists.txt&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;CMakeSettings&quot;,
     &quot;two.files.diff.last.used.folder&quot;: &quot;C:/Users/mathe/OneDrive/Documents/GitHub/IsometricEngine/cmake-build-debug&quot;
   }
 }</component>
@@ -110,12 +106,7 @@
       <workItem from="1701007430250" duration="1000" />
       <workItem from="1701089637823" duration="299000" />
       <workItem from="1701102685009" duration="1873000" />
-      <workItem from="1701105279924" duration="8855000" />
-      <workItem from="1701252196201" duration="51000" />
-      <workItem from="1701252288918" duration="201000" />
-      <workItem from="1701252504115" duration="327000" />
-      <workItem from="1701252907577" duration="11000" />
-      <workItem from="1701271971307" duration="2000" />
+      <workItem from="1701105279924" duration="4799000" />
     </task>
     <task id="LOCAL-00001" summary="liste des contraintes">
       <created>1700130411021</created>
@@ -173,14 +164,7 @@
       <option name="project" value="LOCAL" />
       <updated>1701181512910</updated>
     </task>
-    <task id="LOCAL-00009" summary="lecture de fichier et changement dans les fichiers .txt">
-      <created>1701181761098</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1701181761098</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
