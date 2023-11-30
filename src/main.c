@@ -63,7 +63,7 @@ int main(){
     for (int i=0; i<taille; i++){
         ajouterDependance(tabPrecedence1[i], tabPrecedence2[i], taches);
     }
-
+    printf("mol");
     // Réalisez toutes les tâches
     int tache_non_realisee = 1;
     while (tache_non_realisee){
