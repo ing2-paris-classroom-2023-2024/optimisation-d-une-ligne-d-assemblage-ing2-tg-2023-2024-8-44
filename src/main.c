@@ -63,7 +63,7 @@ int main(){
     for (int i=0; i<taille; i++){
         ajouterDependance(tabPrecedence1[i], tabPrecedence2[i], taches);
     }
-    printf("mol");
+
     // Réalisez toutes les tâches
     int tache_non_realisee = 1;
     while (tache_non_realisee){
@@ -92,7 +92,22 @@ int main(){
     MatriceExclusion = lectureExclusion(sommetMax,"../fileTexte/exclusions.txt");
 
     printf("%d\n", checkIfExclusion(1,4,MatriceExclusion));
+    // Initialiser les stations à -1, indiquant qu'aucune station n'est attribuée
+    int stations[sommetMax + 1];
+    for (int i = 1; i <= sommetMax; ++i) {
+        stations[i] = -1;
+    }
 
+    parcourir(MatriceExclusion, sommetMax,*stations);
+    // Afficher la répartition finale des opérations sur les stations
+    /*for (int i = 1; i <= sommetMax; ++i) {
+        printf("Opération %d -> Station %d\n", i, stations[i]);
+    }
+
+    // Libérer la mémoire allouée
+    for (int i = 0; i <= sommetMax; ++i) {
+        free(MatriceExclusion[i]);
+    }*/
     //libérer la memoire
     free(tabPrecedence1);
     free(tabPrecedence2);

@@ -70,3 +70,41 @@ bool checkIfExclusion(int op1, int op2,int **MatriceExlcusion)
 {
     return (MatriceExlcusion[op1][op2]==1||MatriceExlcusion[op2][op1]==1);
 }
+void parcourir(int **MatriceExlcusion,int tailleMatriceExclusion,int *stations){
+    int degres[tailleMatriceExclusion+1];
+    for (int i = 0; i <= tailleMatriceExclusion; ++i) {
+        degres[i]=0;
+        for (int j = 0; j <= tailleMatriceExclusion; ++j) {
+            if (checkIfExclusion(i, j, MatriceExlcusion)==1){
+                degres[i]++;
+            };
+
+        }
+        printf("opération %d degrés %d\n",i,degres[i]);
+    }
+    // Trie des indices en fonction des degrés (ordre décroissant)
+    int indices[tailleMatriceExclusion + 1];
+    for (int i = 0; i <= tailleMatriceExclusion; ++i) {
+        indices[i] = i;
+    }
+
+    for (int i = 0; i < tailleMatriceExclusion; ++i) {
+        for (int j = i + 1; j <= tailleMatriceExclusion; ++j) {
+            if (degres[indices[j]] > degres[indices[i]]) {
+                // Échange des indices
+                int temp = indices[i];
+                indices[i] = indices[j];
+                indices[j] = temp;
+            }
+        }
+    }
+
+    // Affichage des opérations triées par ordre décroissant de degrés
+    printf("Opérations triées par ordre décroissant de degrés :\n");
+    for (int i = 0; i <= tailleMatriceExclusion; ++i) {
+        printf("Opération %d -> Degré %d\n", indices[i], degres[indices[i]]);
+    }
+}
+
+
+
