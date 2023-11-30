@@ -31,7 +31,7 @@ int main() {
                 // Afficher les contraintes de précédence et temps de cycle
                 break;
             case 4:
-                //Heurisique
+                //Heuristique
                 break;
             case 5:
                 printf("Quitter le programme.\n");
