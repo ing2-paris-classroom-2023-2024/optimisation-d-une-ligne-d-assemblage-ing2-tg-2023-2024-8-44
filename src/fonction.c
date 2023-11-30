@@ -70,17 +70,17 @@ bool checkIfExclusion(int op1, int op2,int **MatriceExlcusion)
 {
     return (MatriceExlcusion[op1][op2]==1||MatriceExlcusion[op2][op1]==1);
 }
-void parcourir(int **MatriceExlcusion,int tailleMatriceExclusion,int *stations){
-    int degres[tailleMatriceExclusion+1];
+void parcourir(int **MatriceExlcusion,int tailleMatriceExclusion,int stations[35 + 1]) {
+    int degres[tailleMatriceExclusion + 1];
     for (int i = 0; i <= tailleMatriceExclusion; ++i) {
-        degres[i]=0;
+        degres[i] = 0;
         for (int j = 0; j <= tailleMatriceExclusion; ++j) {
-            if (checkIfExclusion(i, j, MatriceExlcusion)==1){
+            if (checkIfExclusion(i, j, MatriceExlcusion) == 1) {
                 degres[i]++;
             };
 
         }
-        printf("opération %d degrés %d\n",i,degres[i]);
+        printf("opération %d degrés %d\n", i, degres[i]);
     }
     // Trie des indices en fonction des degrés (ordre décroissant)
     int indices[tailleMatriceExclusion + 1];
@@ -101,10 +101,33 @@ void parcourir(int **MatriceExlcusion,int tailleMatriceExclusion,int *stations){
 
     // Affichage des opérations triées par ordre décroissant de degrés
     printf("Opérations triées par ordre décroissant de degrés :\n");
-    for (int i = 0; i <= tailleMatriceExclusion; ++i) {
+    /*for (int i = 0; i <= tailleMatriceExclusion; ++i) {
         printf("Opération %d -> Degré %d\n", indices[i], degres[indices[i]]);
     }
-}
+    stations[indices[0]]=1;
+    printf("Opération %d -> station %d",indices[0],stations[indices[0]]);
+    for (int i = 1; i<=tailleMatriceExclusion; ++i) {
+        int operation = indices[i];
+        int autreOperation = indices[i-1];
+        if (checkIfExclusion(operation, autreOperation, MatriceExlcusion) == 1) {
+         stations[operation]=stations[autreOperation]++;
+        }
+        else{
+            stations[operation]=stations[autreOperation];
+        }
+    }*/
+    for (int i = 0; i < tailleMatriceExclusion; ++i) {
+        int operation = indices[i];  // Récupérer l'opération après le tri
 
+
+        // Mise à jour des stations pour les opérations suivantes
+        for (int j = i + 1; j <= tailleMatriceExclusion; ++j) {
+            int autreOperation = indices[j];  // Récupérer l'opération après le tri
+            if (checkIfExclusion(operation, autreOperation, MatriceExlcusion)==1 && stations[autreOperation] == 1) {
+                stations[autreOperation] = stations[operation] + 1; // Attribuer une nouvelle station pour l'opération exclue
+            }
+        }
+    }
+}
 
 
