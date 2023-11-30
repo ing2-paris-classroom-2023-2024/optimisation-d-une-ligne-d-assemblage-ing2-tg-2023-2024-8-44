@@ -20,9 +20,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="redirect file Menu.c into src directories">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="add Menu.c into CMakeLists.txt">
+      <change beforePath="$PROJECT_DIR$/src/Menu.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +120,7 @@
       <workItem from="1701105279924" duration="4799000" />
       <workItem from="1701342626192" duration="39000" />
       <workItem from="1701342673006" duration="89000" />
-      <workItem from="1701342788942" duration="3917000" />
+      <workItem from="1701342788942" duration="4183000" />
     </task>
     <task id="LOCAL-00001" summary="liste des contraintes">
       <created>1700130411021</created>
@@ -221,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701352965188</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="add Menu.c into CMakeLists.txt">
+      <created>1701353042855</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1701353042855</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +255,7 @@
     <MESSAGE value="remoove test files" />
     <MESSAGE value="exclusion inclusion in the project" />
     <MESSAGE value="redirect file Menu.c into src directories" />
-    <option name="LAST_COMMIT_MESSAGE" value="redirect file Menu.c into src directories" />
+    <MESSAGE value="add Menu.c into CMakeLists.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Menu.c into CMakeLists.txt" />
   </component>
 </project>

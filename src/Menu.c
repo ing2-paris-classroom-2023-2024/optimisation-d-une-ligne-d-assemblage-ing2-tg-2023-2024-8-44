@@ -12,7 +12,8 @@ void afficher_menu() {
     printf("5. Quitter\n");
 }
 
-int main() {
+
+void Menu(){
     int choix;
 
     do {
@@ -40,6 +41,4 @@ int main() {
                 printf("Choix invalide. Veuillez réessayer.\n");
         }
     } while (choix != 5);
-
-    return 0;
 }
