@@ -91,6 +91,8 @@ int main(){
 
     MatriceExclusion = lectureExclusion(sommetMax,"../fileTexte/exclusions.txt");
 
+    printf("%d\n", checkIfExclusion(1,4,MatriceExclusion));
+
     //libérer la memoire
     free(tabPrecedence1);
     free(tabPrecedence2);
