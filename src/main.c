@@ -87,7 +87,6 @@ int main(){
 
 
     ///Gérer les exclusions///
-
     //Lire le fichier exclusion:
 
     MatriceExclusion = lectureExclusion(sommetMax,"../fileTexte/exclusions.txt");
