@@ -3,7 +3,7 @@
 //
 #include "stdio.h"
 #include "limits.h"
-#include "../src/fonction.h"
+#include "../include/fonction.h"
 #define MAX_OPERATIONS 35
 #define MAX_STATIONS 10
 
@@ -48,7 +48,7 @@
 //    }
 //}
 
-void lecture(t_operation *TabOp,t_InfoAllOp *InfoTab,int *tailleTab, int *tempsDeCyle, char *nomFichierExclusions,char *nomFichierOperations,char *nomFichierPrecedence,char *nomFichierTempsDeCycle)
+void lectureMatheo(t_operation *TabOp,t_InfoAllOp *InfoTab,int *tailleTab, int *tempsDeCyle, char *nomFichierExclusions,char *nomFichierOperations,char *nomFichierPrecedence,char *nomFichierTempsDeCycle)
 {
     FILE *fichierOperation = NULL;
     FILE *fichierExclusions = NULL;
