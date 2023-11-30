@@ -6,4 +6,4 @@ set(CMAKE_C_STANDARD 17)
 
 include_directories(include)
 
-add_executable(project src/main.c src/fonction.c src/graphe.c src/lectureFichier.c src/precedenceTemps.c)
+add_executable(project src/main.c src/fonction.c src/graphe.c src/lectureFichier.c src/precedenceTemps.c src/Menu.c)

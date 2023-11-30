@@ -20,12 +20,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="remoove test files">
+    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="redirect file Menu.c into src directories">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileTexte/operations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fileTexte/operations.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/fonction.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/fonction.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonction.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonction.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +36,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -76,8 +72,8 @@
       <recent name="C:\Users\malik\Documents\GitHub\optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44\fileTexte" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\mathe\OneDrive\Documents\GitHub\Projet\optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44\include" />
       <recent name="C:\Users\mathe\OneDrive\Documents\GitHub\Projet\optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44\src" />
+      <recent name="C:\Users\mathe\OneDrive\Documents\GitHub\Projet\optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44\include" />
       <recent name="C:\Users\mathe\OneDrive\Documents\GitHub\Projet\optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44\partieThéo" />
       <recent name="C:\Users\mathe\OneDrive\Documents\GitHub\optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44\src" />
       <recent name="C:\Users\mathe\OneDrive\Documents\GitHub\optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44\include" />
@@ -125,7 +121,7 @@
       <workItem from="1701105279924" duration="4799000" />
       <workItem from="1701342626192" duration="39000" />
       <workItem from="1701342673006" duration="89000" />
-      <workItem from="1701342788942" duration="3501000" />
+      <workItem from="1701342788942" duration="3917000" />
     </task>
     <task id="LOCAL-00001" summary="liste des contraintes">
       <created>1700130411021</created>
@@ -204,7 +200,28 @@
       <option name="project" value="LOCAL" />
       <updated>1701343069253</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="exclusion inclusion in the project">
+      <created>1701352633083</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701352633083</updated>
+    </task>
+    <task id="LOCAL-00013" summary="exclusion inclusion in the project">
+      <created>1701352878204</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1701352878204</updated>
+    </task>
+    <task id="LOCAL-00014" summary="redirect file Menu.c into src directories">
+      <created>1701352965188</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1701352965188</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +247,8 @@
     <MESSAGE value="rearange the project addings includes directory and src directory" />
     <MESSAGE value="adding lectureFichier.c and precedenceTemps.c" />
     <MESSAGE value="remoove test files" />
-    <option name="LAST_COMMIT_MESSAGE" value="remoove test files" />
+    <MESSAGE value="exclusion inclusion in the project" />
+    <MESSAGE value="redirect file Menu.c into src directories" />
+    <option name="LAST_COMMIT_MESSAGE" value="redirect file Menu.c into src directories" />
   </component>
 </project>
