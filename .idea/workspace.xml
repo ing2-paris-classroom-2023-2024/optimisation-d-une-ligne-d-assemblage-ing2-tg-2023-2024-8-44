@@ -20,19 +20,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="ajout de .gitignore">
-      <change afterPath="$PROJECT_DIR$/include/header.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphe.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44.iml" afterDir="false" />
+    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="remoove test files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/partieThéo/Sources" beforeDir="false" afterPath="$PROJECT_DIR$/partieTheo/Sources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/partieThéo/projetAlgoPrecedenceEtTemps.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileTexte/operations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fileTexte/operations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/fonction.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/fonction.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fonction.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonction.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonction.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/fonction.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/precedencesEtTemps.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +84,11 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project" TARGET_NAME="project" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project" RUN_TARGET_NAME="project">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -127,6 +125,7 @@
       <workItem from="1701105279924" duration="4799000" />
       <workItem from="1701342626192" duration="39000" />
       <workItem from="1701342673006" duration="89000" />
+      <workItem from="1701342788942" duration="3501000" />
     </task>
     <task id="LOCAL-00001" summary="liste des contraintes">
       <created>1700130411021</created>
@@ -184,7 +183,28 @@
       <option name="project" value="LOCAL" />
       <updated>1701181512910</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="rearange the project addings includes directory and src directory">
+      <created>1701342957876</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701342957876</updated>
+    </task>
+    <task id="LOCAL-00010" summary="adding lectureFichier.c and precedenceTemps.c">
+      <created>1701343023327</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701343023327</updated>
+    </task>
+    <task id="LOCAL-00011" summary="remoove test files">
+      <created>1701343069253</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701343069253</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +227,9 @@
     <MESSAGE value="changes to project problem with cmake debug, problem with lecture fonction" />
     <MESSAGE value="test fichier" />
     <MESSAGE value="lecture de fichier et changement dans les fichiers .txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="lecture de fichier et changement dans les fichiers .txt" />
+    <MESSAGE value="rearange the project addings includes directory and src directory" />
+    <MESSAGE value="adding lectureFichier.c and precedenceTemps.c" />
+    <MESSAGE value="remoove test files" />
+    <option name="LAST_COMMIT_MESSAGE" value="remoove test files" />
   </component>
 </project>

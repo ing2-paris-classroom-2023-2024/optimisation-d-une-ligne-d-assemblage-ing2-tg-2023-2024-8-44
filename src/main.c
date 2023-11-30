@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../include/header.h"
+#include "../include/fonction.h"
 
 int main(){
     int *tabPrecedence1=NULL, *tabPrecedence2=NULL;
@@ -8,6 +9,7 @@ int main(){
     float *opTemps=NULL;
     int tempsCycle = 0, nbLignesPrecedence = 0, nbLignesOperations=0;
     int *sommets = NULL;
+    int **MatriceExclusion = NULL;
 
 
     lecture(&tabPrecedence1, &tabPrecedence2, &nbLignesPrecedence, &nbLignesOperations, &tempsCycle, &opSommets, &opTemps);
@@ -83,6 +85,12 @@ int main(){
     }
 
 
+
+    ///Gérer les exclusions///
+
+    //Lire le fichier exclusion:
+
+    MatriceExclusion = lectureExclusion(sommetMax,"../fileTexte/exclusions.txt");
 
     //libérer la memoire
     free(tabPrecedence1);

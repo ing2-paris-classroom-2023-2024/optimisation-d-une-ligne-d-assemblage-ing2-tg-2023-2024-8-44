@@ -65,14 +65,8 @@ typedef struct assemblyLine_s
     int nbOpe;
 } assemblyLine_t;
 
-typedef struct
-{
-    int **matriceExclusion;
-    int **matricePrecedence;
-}t_InfoAllOp;
 
 
-
-void lectureMatheo(t_operation *TabOp,t_InfoAllOp *Tab1,int *tailleTab, int *tempsDeCyle, char *nomFichierExclusions,char *nomFichierOperations,char *nomFichierPrecedence,char *nomFichierTempsDeCycle);
-
+int **lectureExclusion(int tailleMatriceExclusion, char *nomFichierExclusions);
+bool checkIfExclusion(int op1, int op2,int **MatriceExlcusion);
 #endif //OPTIMISATION_D_UNE_LIGNE_D_ASSEMBLAGE_ING2_TG_2023_2024_8_44_FONCTION_H
