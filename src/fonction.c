@@ -89,11 +89,8 @@ bool checkIfExclusion(int op1, int op2,int **MatriceExlcusion)
     return (MatriceExlcusion[op1][op2]==1||MatriceExlcusion[op2][op1]==1);
 }
 
-bool checkIfOpDoesntExist(int op1, int op2,int **MatriceExlcusion)
-{
-    return (MatriceExlcusion[op1][op2]==-1||MatriceExlcusion[op2][op1]==-1);
-}
-void parcourir(int **MatriceExlcusion,int tailleMatriceExclusion,int *stations) {
+
+void parcourir(int **MatriceExlcusion,int tailleMatriceExclusion,int *stations, int *tabOpExistant, int ordre) {
     int degres[tailleMatriceExclusion + 1];
     for (int i = 0; i <= tailleMatriceExclusion; ++i) {
 
@@ -159,9 +156,14 @@ void parcourir(int **MatriceExlcusion,int tailleMatriceExclusion,int *stations) 
                 stations[autreOperation] =
                         stations[operation] + 1; // Attribuer une nouvelle station pour l'opération exclue
             }
+            if(checkIfOpExist(tabOpExistant,ordre,operation) == 0 ){
+                stations[operation]=-1;
+            }
 
         }
         
     }
+
+    printf("%d",checkIfOpExist(tabOpExistant,ordre,14) );
 }
 
