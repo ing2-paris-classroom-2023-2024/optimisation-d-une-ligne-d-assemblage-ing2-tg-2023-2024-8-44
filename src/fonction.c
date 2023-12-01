@@ -130,9 +130,9 @@ void parcourir(int **MatriceExlcusion,int tailleMatriceExclusion,int *stations, 
 
     // Affichage des opérations triées par ordre décroissant de degrés
     printf("Opérations triées par ordre décroissant de degrés :\n");
-    /*for (int i = 0; i <= tailleMatriceExclusion; ++i) {
+    for (int i = 0; i <= tailleMatriceExclusion; ++i) {
         printf("Opération %d -> Degré %d\n", indices[i], degres[indices[i]]);
-    }
+    }/*
     stations[indices[0]]=1;
     printf("Opération %d -> station %d",indices[0],stations[indices[0]]);
     for (int i = 1; i<=tailleMatriceExclusion; ++i) {
@@ -145,22 +145,27 @@ void parcourir(int **MatriceExlcusion,int tailleMatriceExclusion,int *stations, 
             stations[operation]=stations[autreOperation];
         }
     }*/
-    for (int i = 0; i < tailleMatriceExclusion; ++i) {
+    for (int i = 0; i <= tailleMatriceExclusion; ++i) {
         int operation = indices[i];  // Récupérer l'opération après le tri
-
+        if(degres[operation]==0||degres[operation]==-1){
+            stations[operation]=-1;
+        }
 
         // Mise à jour des stations pour les opérations suivantes
         for (int j = i + 1; j <= tailleMatriceExclusion; ++j) {
-            int autreOperation = indices[j];  // Récupérer l'opération après le tri
+            int autreOperation = indices[j];
+            // Récupérer l'opération après le tri
             if (checkIfExclusion(operation, autreOperation, MatriceExlcusion) == 1 && stations[autreOperation] == 1) {
-                stations[autreOperation] =
-                        stations[operation] + 1; // Attribuer une nouvelle station pour l'opération exclue
-            }
-            if(checkIfOpExist(tabOpExistant,ordre,operation) == 0 ){
-                stations[operation]=-1;
+                stations[autreOperation] =stations[operation] + 1; // Attribuer une nouvelle station pour l'opération exclue
             }
 
+
+
         }
+
+
+
+
         
     }
 
