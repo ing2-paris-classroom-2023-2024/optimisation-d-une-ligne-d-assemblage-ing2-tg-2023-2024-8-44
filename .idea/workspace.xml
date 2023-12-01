@@ -14,15 +14,13 @@
       <config projectName="project" targetName="project" />
     </generated>
   </component>
-  <component name="CMakeSettings" AUTO_RELOAD="true">
+  <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="add Menu.c into CMakeLists.txt">
-      <change beforePath="$PROJECT_DIR$/src/Menu.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.c" afterDir="false" />
-    </list>
+    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="changes to project problem with cmake debug, problem with lecture fonction" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +33,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -49,15 +48,13 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mathe/OneDrive/Documents/GitHub/Projet/optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44/CMakeLists.txt&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mathe/OneDrive/Documents/GitHub/optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -71,17 +68,14 @@
       <recent name="C:\Users\malik\Documents\GitHub\optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44\fileTexte" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\mathe\OneDrive\Documents\GitHub\Projet\optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44\src" />
-      <recent name="C:\Users\mathe\OneDrive\Documents\GitHub\Projet\optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44\include" />
-      <recent name="C:\Users\mathe\OneDrive\Documents\GitHub\Projet\optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44\partieThéo" />
       <recent name="C:\Users\mathe\OneDrive\Documents\GitHub\optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44\src" />
       <recent name="C:\Users\mathe\OneDrive\Documents\GitHub\optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44\include" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
     <configuration name="optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project" TARGET_NAME="project" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project" RUN_TARGET_NAME="project">
@@ -115,12 +109,6 @@
       <workItem from="1700948404147" duration="56000" />
       <workItem from="1700948476795" duration="2170000" />
       <workItem from="1701007430250" duration="1000" />
-      <workItem from="1701089637823" duration="299000" />
-      <workItem from="1701102685009" duration="1873000" />
-      <workItem from="1701105279924" duration="4799000" />
-      <workItem from="1701342626192" duration="39000" />
-      <workItem from="1701342673006" duration="89000" />
-      <workItem from="1701342788942" duration="4183000" />
     </task>
     <task id="LOCAL-00001" summary="liste des contraintes">
       <created>1700130411021</created>
@@ -164,70 +152,7 @@
       <option name="project" value="LOCAL" />
       <updated>1700950400291</updated>
     </task>
-    <task id="LOCAL-00007" summary="lecture de fichier et changement dans les fichiers .txt">
-      <created>1701109906046</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1701109906046</updated>
-    </task>
-    <task id="LOCAL-00008" summary="lecture de fichier et changement dans les fichiers .txt">
-      <created>1701181512910</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1701181512910</updated>
-    </task>
-    <task id="LOCAL-00009" summary="rearange the project addings includes directory and src directory">
-      <created>1701342957876</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1701342957876</updated>
-    </task>
-    <task id="LOCAL-00010" summary="adding lectureFichier.c and precedenceTemps.c">
-      <created>1701343023327</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1701343023327</updated>
-    </task>
-    <task id="LOCAL-00011" summary="remoove test files">
-      <created>1701343069253</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1701343069253</updated>
-    </task>
-    <task id="LOCAL-00012" summary="exclusion inclusion in the project">
-      <created>1701352633083</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1701352633083</updated>
-    </task>
-    <task id="LOCAL-00013" summary="exclusion inclusion in the project">
-      <created>1701352878204</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1701352878204</updated>
-    </task>
-    <task id="LOCAL-00014" summary="redirect file Menu.c into src directories">
-      <created>1701352965188</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1701352965188</updated>
-    </task>
-    <task id="LOCAL-00015" summary="add Menu.c into CMakeLists.txt">
-      <created>1701353042855</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1701353042855</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,14 +173,6 @@
     <MESSAGE value="liste des contraintes" />
     <MESSAGE value="contrainte exclusion lire fichier" />
     <MESSAGE value="changes to project problem with cmake debug, problem with lecture fonction" />
-    <MESSAGE value="test fichier" />
-    <MESSAGE value="lecture de fichier et changement dans les fichiers .txt" />
-    <MESSAGE value="rearange the project addings includes directory and src directory" />
-    <MESSAGE value="adding lectureFichier.c and precedenceTemps.c" />
-    <MESSAGE value="remoove test files" />
-    <MESSAGE value="exclusion inclusion in the project" />
-    <MESSAGE value="redirect file Menu.c into src directories" />
-    <MESSAGE value="add Menu.c into CMakeLists.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Menu.c into CMakeLists.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes to project problem with cmake debug, problem with lecture fonction" />
   </component>
 </project>

@@ -10,6 +10,7 @@ int main(){
     int tempsCycle = 0, nbLignesPrecedence = 0, nbLignesOperations=0;
     int *sommets = NULL;
     int **MatriceExclusion = NULL;
+    int *existanceOp = NULL;
 
 
     lecture(&tabPrecedence1, &tabPrecedence2, &nbLignesPrecedence, &nbLignesOperations, &tempsCycle, &opSommets, &opTemps);
@@ -89,7 +90,7 @@ int main(){
     ///Gérer les exclusions///
     //Lire le fichier exclusion:
 
-    MatriceExclusion = lectureExclusion(sommetMax,"../fileTexte/exclusions.txt");
+    MatriceExclusion = lectureExclusion(sommetMax,"../fileTexte/exclusions.txt",opSommets,ordre);
 
     printf("%d\n", checkIfExclusion(1,4,MatriceExclusion));
     // Initialiser les stations à -1, indiquant qu'aucune station n'est attribuée

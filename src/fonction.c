@@ -5,7 +5,19 @@
 #include "stdbool.h"
 #include "../include/fonction.h"
 
-int ** lectureExclusion(int tailleMatriceExclusion, char *nomFichierExclusions)
+bool checkIfOpExist(const int *tabOpExistant, int ordre, int opToCheck)
+{
+    for(int i=0;i<ordre;i++)
+    {
+        if(opToCheck ==  tabOpExistant[i])
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+int ** lectureExclusion(int tailleMatriceExclusion, char *nomFichierExclusions, int *tabOpExistant, int ordre)
 {
     FILE *fichierExclusions = NULL;
     char ligne[10];
@@ -42,10 +54,16 @@ int ** lectureExclusion(int tailleMatriceExclusion, char *nomFichierExclusions)
     {
         for(int j=0;j<(tailleMatriceExclusion+1);j++)
         {
-            MatriceExclusionARendre[i][j]=0;
+            if(checkIfOpExist(tabOpExistant,ordre,i)&&(checkIfOpExist(tabOpExistant,ordre,j)))
+            {
+                MatriceExclusionARendre[i][j]=0;
+            }
+            else
+            {
+                MatriceExclusionARendre[i][j] = -1;
+            }
         }
     }
-    printf("zef");
 
     while (fgets(ligne,tailleMatriceExclusion,fichierExclusions) != NULL){
         sscanf(ligne, "%d %d",&valeurTmp,&valeurTmp2);
@@ -116,9 +134,6 @@ void parcourir(int **MatriceExlcusion,int tailleMatriceExclusion,int stations[35
             stations[operation]=stations[autreOperation];
         }
     }*/
-    int station1[tailleMatriceExclusion];
-    int station2[tailleMatriceExclusion];
-    int station3[tailleMatriceExclusion];
     for (int i = 0; i < tailleMatriceExclusion; ++i) {
         int operation = indices[i];  // Récupérer l'opération après le tri
 

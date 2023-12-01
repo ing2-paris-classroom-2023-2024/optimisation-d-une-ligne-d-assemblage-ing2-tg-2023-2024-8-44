@@ -67,7 +67,7 @@ typedef struct assemblyLine_s
 
 
 
-int **lectureExclusion(int tailleMatriceExclusion, char *nomFichierExclusions);
+int **lectureExclusion(int tailleMatriceExclusion, char *nomFichierExclusions, int *tabOpExisant, int ordre);
 bool checkIfExclusion(int op1, int op2,int **MatriceExlcusion);
 void parcourir(int **MatriceExlcusion,int tailleMatriceExclusion, int stations[35 + 1]);
 #endif //OPTIMISATION_D_UNE_LIGNE_D_ASSEMBLAGE_ING2_TG_2023_2024_8_44_FONCTION_H
