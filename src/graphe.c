@@ -22,14 +22,18 @@ void ajouterArc(Graphe* graphe, int source, int destination) {
 }
 
 // Fonction pour afficher le graphe
-void afficherGraphe(Graphe* graphe) {
-    for (int i=1; i < graphe->nbSommets; i++){
-        Arc* arcCourant = graphe->listeAdjacence[i];
-        printf("Sommets suivants pour le sommet %d:\n", i);
-        while (arcCourant != NULL) {
-            printf("  -> Sommet: %d\n", arcCourant->sommetDestination);
-            arcCourant = arcCourant->suivant;
+void afficherGraphe(Graphe* graphe, const int *tabSommets, int sommetMax){
+    for (int i=1; i < graphe->nbSommets; i++) {
+        for (int j = 0; j < sommetMax; j++) {
+            if (tabSommets[j] == i) {
+                printf("Sommet %d:\n", i);
+                Arc *arcCourant = graphe->listeAdjacence[i];
+                while (arcCourant != NULL) {
+                    printf("  -> Sommet: %d\n", arcCourant->sommetDestination);
+                    arcCourant = arcCourant->suivant;
+                }
+                printf("\n");
+            }
         }
-        printf("\n");
     }
 }

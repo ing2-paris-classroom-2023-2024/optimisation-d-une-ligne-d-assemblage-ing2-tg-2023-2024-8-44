@@ -20,7 +20,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="Modification exclusion sort existant Operation" />
+    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="Modification exclusion sort existant Operation">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/header.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/header.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphe.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphe.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lectureFichier.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/lectureFichier.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/precedenceTemps.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/precedenceTemps.c" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,7 +60,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mathe/OneDrive/Documents/GitHub/optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mathe/Downloads/projetAlgoPrecedenceEtTemps&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -73,11 +79,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="optimisation-d-une-ligne-d-assemblage-ing2-tg-2023-2024-8-44" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project" TARGET_NAME="project" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project" RUN_TARGET_NAME="project">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -109,6 +110,11 @@
       <workItem from="1700948404147" duration="56000" />
       <workItem from="1700948476795" duration="2170000" />
       <workItem from="1701007430250" duration="1000" />
+      <workItem from="1701462210953" duration="35000" />
+      <workItem from="1701462388095" duration="8000" />
+      <workItem from="1701462405487" duration="27000" />
+      <workItem from="1701462479224" duration="40000" />
+      <workItem from="1701462536223" duration="25000" />
     </task>
     <task id="LOCAL-00001" summary="liste des contraintes">
       <created>1700130411021</created>
@@ -173,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701458621700</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Modification exclusion sort existant Operation">
+      <created>1701461459868</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701461459868</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

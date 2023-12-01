@@ -4,14 +4,15 @@
 #include "../include/fonction.h"
 
 int main(){
+    int **MatriceExclusion = NULL;
+    int *existanceOp = NULL;
+
+
     int *tabPrecedence1=NULL, *tabPrecedence2=NULL;
     int *opSommets=NULL;
     float *opTemps=NULL;
     int tempsCycle = 0, nbLignesPrecedence = 0, nbLignesOperations=0;
     int *sommets = NULL;
-    int **MatriceExclusion = NULL;
-    int *existanceOp = NULL;
-
 
     lecture(&tabPrecedence1, &tabPrecedence2, &nbLignesPrecedence, &nbLignesOperations, &tempsCycle, &opSommets, &opTemps);
 
@@ -25,19 +26,17 @@ int main(){
     }
 
 
-
     ///GRAPHE ///
     //récuperer l'odre et la taille du grahpe
     int ordre = nbLignesOperations;
     int taille = nbLignesPrecedence;
     int sommetMax = opSommets[nbLignesOperations-1];
-    printf("sommet max : %d\n", sommetMax);
 
 
     ///creer le graphe
 
     // Initialiser le graphe avec le nombre de sommets
-    Graphe* graphe = creerGraphe(ordre+1);
+    Graphe* graphe = creerGraphe(sommetMax+1);
     // Ajouter des arcs au graphe en fonction des tableaux de précédence
     for (int i=0; i<taille; i++){
         ajouterArc(graphe, tabPrecedence1[i], tabPrecedence2[i]);
@@ -45,7 +44,7 @@ int main(){
 
 
     /// AFFICHAGE /// Blinder l'affichage pour les sommets inexistants egalement et probleme avec le sommet 7
-    affichageFichier(nbLignesPrecedence, nbLignesOperations, tempsCycle, ordre, taille, tabPrecedence1, tabPrecedence2, opSommets, opTemps, graphe);
+    affichageFichier(nbLignesPrecedence, nbLignesOperations, tempsCycle, ordre, taille, tabPrecedence1, tabPrecedence2, opSommets, opTemps, graphe, sommetMax);
 
     printf("TAB SOMMET : \n");
     for (int i=0; i<nbLignesOperations; i++){
@@ -66,7 +65,12 @@ int main(){
     }
 
     // Réalisez toutes les tâches
-    int tache_non_realisee = 1;
+    int tache_non_realisee = 1;         //on peut encore optimiser ceci pour ajouter une tache a la station 1 car il reste de la place pour certaines op
+    printf("\n\n///////////////////////////////////////////////\n");
+    printf("///////// ATTRIBUTIONS DES STATIONS ///////////\n");
+    printf("///////////////////////////////////////////////\n");
+    printf("\n STATION 1\n\n");
+
     while (tache_non_realisee){
         tache_non_realisee = 0;
         for (int i=0; i<sommetMax; i++){
@@ -75,11 +79,12 @@ int main(){
                 realiserTache(taches[i].id, taches, sommetMax);
                 tache_non_realisee = 1;
                 tempsTotal += taches[i].temps;
-                if (tempsTotal > (float)tempsCycle){
+                if (tempsTotal > (float)tempsCycle){ // creation nouvelle station
                     tempsTotal = taches[i].temps;
                     station++;
+                    printf("\n STATION %d\n\n",station);
                 }
-                printf("Tache %d | Temps %.2f | Station %d\n", taches[i].id, taches[i].temps, station);
+                printf("Tache %d | Temps de l'operation %.2f | Station %d | Temps de cycle %.2f\n", taches[i].id, taches[i].temps, station, tempsTotal);
                 break;
             }
         }

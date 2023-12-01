@@ -10,6 +10,7 @@ void lecture(int **arc1, int **arc2, int *nbLignesPrecedence, int *nbLignesOpera
     char nomFichier[50];
 
     /// PRECEDENCES ///
+
     fichier = fopen("../fileTexte/precedences.txt", "r"); // ouverture du fichier
     if (fichier == NULL) {
         printf("Erreur ouverture fichier");
@@ -45,6 +46,7 @@ void lecture(int **arc1, int **arc2, int *nbLignesPrecedence, int *nbLignesOpera
     fclose(fichier);
 
     /// TEMPS CYCLE ///
+
     fichier = fopen("../fileTexte/temps_cycle.txt", "r"); // ouverture du fichier
     if (fichier == NULL) {
         printf("Erreur ouverture fichier");
@@ -58,8 +60,6 @@ void lecture(int **arc1, int **arc2, int *nbLignesPrecedence, int *nbLignesOpera
     /// OPERATIONS ///
     compteur = 0;  // réinitialiser le compteur
 
-//    printf("Donnez le nom du fichier operations:");
-//    scanf("%s", nomFichier);
     fichier = fopen("../fileTexte/operations.txt", "r"); // ouverture du fichier
     if (fichier == NULL) {
         printf("Erreur ouverture fichier");
@@ -95,17 +95,7 @@ void lecture(int **arc1, int **arc2, int *nbLignesPrecedence, int *nbLignesOpera
     fclose(fichier);
 }
 
-void affichageFichier(int nbLignesPrecedence, int nbLignesOperations, int tempsCycle, int ordre, int taille, int *tabPrecedence1, int *tabPrecedence2, int *opSommets, float *opTemps, Graphe* graphe){
-    printf("\nTableaux des precedences:\n");
-    for (int i=0; i < nbLignesPrecedence; i++){
-        printf("%d %d\n", tabPrecedence1[i], tabPrecedence2[i]);
-    }
-
-    printf("\nSommets et temps des operations:\n");
-    for (int i=0; i < nbLignesOperations; i++){
-        printf("Sommet: %d, Temps: %.2f\n", opSommets[i], opTemps[i]);
-    }
-
+void affichageFichier(int nbLignesPrecedence, int nbLignesOperations, int tempsCycle, int ordre, int taille, int *tabPrecedence1, int *tabPrecedence2, int *opSommets, float *opTemps, Graphe* graphe, int sommetMax){
     printf("\nInfos du graphe:\n");
     printf("Temps de cycle: %d\n", tempsCycle);
     printf("Ordre: %d\n", ordre-1);
@@ -113,5 +103,5 @@ void affichageFichier(int nbLignesPrecedence, int nbLignesOperations, int tempsC
 
     // Afficher le graphe
     printf("\nGraphe oriente:\n");
-    afficherGraphe(graphe);
+    afficherGraphe(graphe, opSommets, sommetMax);
 }

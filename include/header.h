@@ -35,14 +35,14 @@ typedef struct {            /// parfait rien a changer
 
 Graphe* creerGraphe(int nbSommets);
 void ajouterArc(Graphe* graphe, int source, int destination);
-void afficherGraphe(Graphe* graphe);
+void afficherGraphe(Graphe* graphe, const int *tabSommets, int sommetMax);
 
 ///Partie Lecture de fichier///
 void lecture(int **arc1, int **arc2, int *nbLignesPrecedence, int *nbLignesOperations, int *tempsCycle, int **opSommets, float **opTemps);
-void affichageFichier(int nbLignesPrecedence, int nbLignesOperations, int tempsCycle, int ordre, int taille, int *tabPrecedence1, int *tabPrecedence2, int *opSommets, float *opTemps, Graphe* graphe);
+void affichageFichier(int nbLignesPrecedence, int nbLignesOperations, int tempsCycle, int ordre, int taille, int *tabPrecedence1, int *tabPrecedence2, int *opSommets, float *opTemps, Graphe* graphe, int sommetMax);
 
 ///Partie precedence et temps de cycle///
-void initialiserTaches(Tache taches[], int *tabSommets, int nbLignesOperations, float *tempsOP, int nbTACHES);
+void initialiserTaches(Tache taches[], const int *tabSommets, int nbLignesOperations, const float *tempsOP, int nbTACHES);
 void ajouterDependance(int tache_ant, int tache_act, Tache taches[]);
 void realiserTache(int tache_id, Tache taches[], int nbTACHES);
 

@@ -5,7 +5,7 @@
 
 // pour enlever le defin et avoir un truc modulable, on doit recup le numero de sommet de la derniere ligne du fichier operations.txt
 
-void initialiserTaches(Tache taches[], int *tabSommets, int nbLignesOperations, float *tempsOP, int nbTACHES){
+void initialiserTaches(Tache taches[], const int *tabSommets, int nbLignesOperations, const float *tempsOP, int nbTACHES){
     for (int i = 0; i < nbTACHES; i++) {
         taches[i].id = i + 1;
         taches[i].predecesseurs = NULL;
@@ -14,7 +14,7 @@ void initialiserTaches(Tache taches[], int *tabSommets, int nbLignesOperations, 
         taches[i].existence = 0;
     }
 
-    // Mettre l'existence à 1 pour les sommets dans le tableau /// faire alloc dynamique
+    // Mettre l'existence à 1 pour les sommets dans le tableau          /// faire alloc dynamique
     for (int i = 0; i < nbLignesOperations; i++) {                                      /// 35 = nombrede taches = ??? peutetre nbLignesOperations donc si probleme voir pourimplementerlavariable
         for (int j = 0; j < nbTACHES; j++) {
             if (tabSommets[i] == taches[j].id) {
@@ -24,9 +24,10 @@ void initialiserTaches(Tache taches[], int *tabSommets, int nbLignesOperations, 
             }
         }
     }
-    for (int i = 0; i < nbTACHES; i++) {
-        printf("Tache %d : existence = %d\n", taches[i].id, taches[i].existence);
-    }
+    //verif existence
+    //for (int i = 0; i < nbTACHES; i++) {
+    //    printf("Tache %d : existence = %d\n", taches[i].id, taches[i].existence);
+    //}
 }
 
 
