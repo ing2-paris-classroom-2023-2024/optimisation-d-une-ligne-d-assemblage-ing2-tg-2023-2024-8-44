@@ -91,12 +91,21 @@ bool checkIfExclusion(int op1, int op2,int **MatriceExlcusion)
 void parcourir(int **MatriceExlcusion,int tailleMatriceExclusion,int *stations) {
     int degres[tailleMatriceExclusion + 1];
     for (int i = 0; i <= tailleMatriceExclusion; ++i) {
-        degres[i] = 0;
-        for (int j = 0; j <= tailleMatriceExclusion; ++j) {
-            if (checkIfExclusion(i, j, MatriceExlcusion) == 1) {
-                degres[i]++;
-            };
 
+        //Permet de mettre les degres des  operations non exitstance a -1
+        if (MatriceExlcusion[i][i]==-1)
+        {
+            degres[i] = -1;
+        }
+        else
+        {
+            degres[i] = 0;
+            for (int j = 0; j <= tailleMatriceExclusion; ++j) {
+                if (checkIfExclusion(i, j, MatriceExlcusion) == 1) {
+                    degres[i]++;
+                };
+
+            }
         }
         printf("opération %d degrés %d\n", i, degres[i]);
     }
