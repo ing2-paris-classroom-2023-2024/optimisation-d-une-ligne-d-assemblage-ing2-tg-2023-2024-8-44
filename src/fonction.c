@@ -88,6 +88,11 @@ bool checkIfExclusion(int op1, int op2,int **MatriceExlcusion)
 {
     return (MatriceExlcusion[op1][op2]==1||MatriceExlcusion[op2][op1]==1);
 }
+
+bool checkIfOpDoesntExist(int op1, int op2,int **MatriceExlcusion)
+{
+    return (MatriceExlcusion[op1][op2]==-1||MatriceExlcusion[op2][op1]==-1);
+}
 void parcourir(int **MatriceExlcusion,int tailleMatriceExclusion,int *stations) {
     int degres[tailleMatriceExclusion + 1];
     for (int i = 0; i <= tailleMatriceExclusion; ++i) {
