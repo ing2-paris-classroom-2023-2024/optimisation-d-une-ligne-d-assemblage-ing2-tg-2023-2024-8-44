@@ -116,6 +116,9 @@ void parcourir(int **MatriceExlcusion,int tailleMatriceExclusion,int stations[35
             stations[operation]=stations[autreOperation];
         }
     }*/
+    int station1[tailleMatriceExclusion];
+    int station2[tailleMatriceExclusion];
+    int station3[tailleMatriceExclusion];
     for (int i = 0; i < tailleMatriceExclusion; ++i) {
         int operation = indices[i];  // Récupérer l'opération après le tri
 
@@ -123,11 +126,13 @@ void parcourir(int **MatriceExlcusion,int tailleMatriceExclusion,int stations[35
         // Mise à jour des stations pour les opérations suivantes
         for (int j = i + 1; j <= tailleMatriceExclusion; ++j) {
             int autreOperation = indices[j];  // Récupérer l'opération après le tri
-            if (checkIfExclusion(operation, autreOperation, MatriceExlcusion)==1 && stations[autreOperation] == 1) {
-                stations[autreOperation] = stations[operation] + 1; // Attribuer une nouvelle station pour l'opération exclue
+            if (checkIfExclusion(operation, autreOperation, MatriceExlcusion) == 1 && stations[autreOperation] == 1) {
+                stations[autreOperation] =
+                        stations[operation] + 1; // Attribuer une nouvelle station pour l'opération exclue
             }
+
         }
+        
     }
 }
-
 
