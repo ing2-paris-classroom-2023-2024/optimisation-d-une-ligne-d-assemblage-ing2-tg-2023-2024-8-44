@@ -4,6 +4,7 @@
 #include "stdio.h"
 #include "stdbool.h"
 #include "../include/fonction.h"
+#include "../include/header.h"
 
 bool checkIfOpExist(const int *tabOpExistant, int ordre, int opToCheck)
 {
