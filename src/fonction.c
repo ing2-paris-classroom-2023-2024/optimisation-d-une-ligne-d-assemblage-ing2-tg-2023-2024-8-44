@@ -91,6 +91,7 @@ bool checkIfExclusion(int op1, int op2,int **MatriceExlcusion)
 
 
 void parcourir(int **MatriceExlcusion,int tailleMatriceExclusion,int *stations, int *tabOpExistant, int ordre) {
+    int compteurTempsOp = 0;
     int degres[tailleMatriceExclusion + 1];
     for (int i = 0; i <= tailleMatriceExclusion; ++i) {
 
@@ -132,21 +133,10 @@ void parcourir(int **MatriceExlcusion,int tailleMatriceExclusion,int *stations, 
     printf("Opérations triées par ordre décroissant de degrés :\n");
     for (int i = 0; i <= tailleMatriceExclusion; ++i) {
         printf("Opération %d -> Degré %d\n", indices[i], degres[indices[i]]);
-    }/*
-    stations[indices[0]]=1;
-    printf("Opération %d -> station %d",indices[0],stations[indices[0]]);
-    for (int i = 1; i<=tailleMatriceExclusion; ++i) {
-        int operation = indices[i];
-        int autreOperation = indices[i-1];
-        if (checkIfExclusion(operation, autreOperation, MatriceExlcusion) == 1) {
-         stations[operation]=stations[autreOperation]++;
-        }
-        else{
-            stations[operation]=stations[autreOperation];
-        }
-    }*/
+    }
     for (int i = 0; i <= tailleMatriceExclusion; ++i) {
         int operation = indices[i];  // Récupérer l'opération après le tri
+        //si l'opération n'existe pas nous la mettons dans une station spéciale
         if(degres[operation]==0||degres[operation]==-1){
             stations[operation]=-1;
         }
