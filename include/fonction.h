@@ -8,6 +8,7 @@
 #include "stdlib.h"
 #include "stdio.h"
 #include "stdbool.h"
+#include "header.h"
 
 typedef struct {
     double tempsOperation;
@@ -68,4 +69,6 @@ typedef struct s_station
 int **lectureExclusion(int tailleMatriceExclusion, char *nomFichierExclusions, int *tabOpExisant, int ordre);
 bool checkIfExclusion(int op1, int op2,int **MatriceExlcusion);
 void parcourirExclusionToutSeul(int **MatriceExlcusion,int tailleMatriceExclusion, t_stations *stations,int *tabOpExistant, int ordre);
+float TempsDeCyleToOpStruct(t_OpTempsDeCyle * tabOp, int opToCheck, int ordre);
+void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatriceExclusion,t_stations *stations, t_OpTempsDeCyle * Opstruct, int ordre);
 #endif //OPTIMISATION_D_UNE_LIGNE_D_ASSEMBLAGE_ING2_TG_2023_2024_8_44_FONCTION_H

@@ -113,7 +113,7 @@ int main(){
         stations[i].nbOp=0;
         stations[i].Op = NULL;
     }
-    parcourirExclusionToutSeul(MatriceExclusion, sommetMax,stations,opSommets,ordre);
+    parcourirTempsDeCycleAvecExclusion(MatriceExclusion, sommetMax,stations,Opstruct,ordre);
     // Afficher la répartition finale des opérations sur les stations
     printf("\nRépartition finale des opérations sur les stations :\n");
 
