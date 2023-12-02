@@ -20,11 +20,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="Modification exclusion sort existant Operation">
+    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="changes for fonction.c">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/fonction.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/fonction.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonction.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonction.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +112,7 @@
       <workItem from="1701462479224" duration="40000" />
       <workItem from="1701462536223" duration="25000" />
       <workItem from="1701462580140" duration="1093000" />
+      <workItem from="1701535351982" duration="3000" />
     </task>
     <task id="LOCAL-00001" summary="liste des contraintes">
       <created>1700130411021</created>
@@ -193,7 +191,28 @@
       <option name="project" value="LOCAL" />
       <updated>1701462851378</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="changes for lecture of Operation and temps de cycle and changes for exclusion et temps de cycle">
+      <created>1701519575057</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701519575057</updated>
+    </task>
+    <task id="LOCAL-00013" summary="changes for stations">
+      <created>1701519706337</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1701519706337</updated>
+    </task>
+    <task id="LOCAL-00014" summary="changes for fonction.c">
+      <created>1701524040587</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1701524040587</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +234,9 @@
     <MESSAGE value="contrainte exclusion lire fichier" />
     <MESSAGE value="changes to project problem with cmake debug, problem with lecture fonction" />
     <MESSAGE value="Modification exclusion sort existant Operation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modification exclusion sort existant Operation" />
+    <MESSAGE value="changes for lecture of Operation and temps de cycle and changes for exclusion et temps de cycle" />
+    <MESSAGE value="changes for stations" />
+    <MESSAGE value="changes for fonction.c" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes for fonction.c" />
   </component>
 </project>
