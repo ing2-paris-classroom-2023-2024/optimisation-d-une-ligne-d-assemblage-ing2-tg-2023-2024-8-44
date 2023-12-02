@@ -20,8 +20,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="changes for fonction.c">
+    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="addind fonction to get Temps de cycle in exclusion and temps de cycle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/fonction.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/fonction.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/header.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/header.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonction.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonction.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +115,8 @@
       <workItem from="1701462479224" duration="40000" />
       <workItem from="1701462536223" duration="25000" />
       <workItem from="1701462580140" duration="1093000" />
-      <workItem from="1701535351982" duration="3000" />
+      <workItem from="1701535351982" duration="693000" />
+      <workItem from="1701536374516" duration="455000" />
     </task>
     <task id="LOCAL-00001" summary="liste des contraintes">
       <created>1700130411021</created>
@@ -212,7 +216,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701524040587</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="addind fonction to get Temps de cycle in exclusion and temps de cycle">
+      <created>1701536036445</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1701536036445</updated>
+    </task>
+    <task id="LOCAL-00016" summary="addind fonction to get Temps de cycle in exclusion and temps de cycle">
+      <created>1701536044658</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1701536044658</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +255,7 @@
     <MESSAGE value="changes for lecture of Operation and temps de cycle and changes for exclusion et temps de cycle" />
     <MESSAGE value="changes for stations" />
     <MESSAGE value="changes for fonction.c" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes for fonction.c" />
+    <MESSAGE value="addind fonction to get Temps de cycle in exclusion and temps de cycle" />
+    <option name="LAST_COMMIT_MESSAGE" value="addind fonction to get Temps de cycle in exclusion and temps de cycle" />
   </component>
 </project>

@@ -89,6 +89,18 @@ bool checkIfExclusion(int op1, int op2,int **MatriceExlcusion)
     return (MatriceExlcusion[op1][op2]==1||MatriceExlcusion[op2][op1]==1);
 }
 
+float GetTempsDeCycleToOp(t_OpTempsDeCyle *Opstruct, int opToCheck, int ordre)
+{
+    for(int i=0;i<ordre;i++)
+    {
+        if(opToCheck == Opstruct[i].idOp)
+        {
+            return Opstruct[i].tempsDeCycle;
+        }
+    }
+    return 0;
+}
+
 
 void parcourirExclusionToutSeul(int **MatriceExlcusion,int tailleMatriceExclusion,t_stations *stations, int *tabOpExistant, int ordre) {
     int degres[tailleMatriceExclusion + 1];
@@ -169,7 +181,7 @@ void parcourirExclusionToutSeul(int **MatriceExlcusion,int tailleMatriceExclusio
 }
 
 
-void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatriceExclusion,t_stations *stations) {
+void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatriceExclusion,t_stations *stations, t_OpTempsDeCyle *OpStruct, int ordre) {
     int degres[tailleMatriceExclusion + 1];
     for (int i = 0; i <= tailleMatriceExclusion; ++i) {
 
@@ -218,6 +230,7 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
         if(degres[operation]==0||degres[operation]==-1){
             stations[operation].id=-1;
         }
+        printf("\n%f\n", GetTempsDeCycleToOp(OpStruct,operation,ordre));
 
 
         // Mise à jour des stations pour les opérations suivantes
@@ -233,9 +246,7 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
                         else{
                             stations[autreOperation].id = stations[operation].id-1;
                         }
-                        printf("%d\n",k);
                     }
-                    printf("sortie\n");
                 }
                 else{
                     stations[autreOperation].id =stations[operation].id+1 ; // Attribuer une nouvelle station pour l'opération exclue

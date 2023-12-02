@@ -36,13 +36,7 @@ typedef struct
     int idOp;
     float tempsDeCycle;
 }t_OpTempsDeCyle;
-typedef struct s_station
-{
-    int id;
-    float tempsDeCycle;
-    char * Op;
-    int nbOp;
-}t_stations;
+
 ///Partie Graphe///
 
 Graphe* creerGraphe(int nbSommets);
@@ -53,8 +47,6 @@ void afficherGraphe(Graphe* graphe, const int *tabSommets, int sommetMax);
 void lecture(int **arc1, int **arc2, int *nbLignesPrecedence, int *nbLignesOperations, int *tempsCycle, int **opSommets, float **opTemps);
 void lectureTempsDeCycleOp(t_OpTempsDeCyle * Opstruct);
 void affichageFichier(int nbLignesPrecedence, int nbLignesOperations, int tempsCycle, int ordre, int taille, int *tabPrecedence1, int *tabPrecedence2, int *opSommets, float *opTemps, Graphe* graphe, int sommetMax);
-void parcourirExclusionToutSeul(int **MatriceExlcusion,int tailleMatriceExclusion, t_stations *stations,int *tabOpExistant, int ordre,t_OpTempsDeCyle *op);
-void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatriceExclusion,t_stations *stations, int *tabOpExistant, int ordre,t_OpTempsDeCyle *op);
 ///Partie precedence et temps de cycle///
 void initialiserTaches(Tache taches[], const int *tabSommets, int nbLignesOperations, const float *tempsOP, int nbTACHES);
 void ajouterDependance(int tache_ant, int tache_act, Tache taches[]);
