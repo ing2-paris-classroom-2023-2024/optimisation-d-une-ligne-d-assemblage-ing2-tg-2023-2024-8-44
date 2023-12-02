@@ -174,17 +174,8 @@ void parcourir(int **MatriceExlcusion,int tailleMatriceExclusion,int *stations, 
                 }
 
             }
-
-
-
         }
-
-
-
-
         
     }
-
-    printf("%d",checkIfOpExist(tabOpExistant,ordre,14) );
 }
 

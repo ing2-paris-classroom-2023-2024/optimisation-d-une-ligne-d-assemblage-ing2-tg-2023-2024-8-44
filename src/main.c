@@ -110,7 +110,10 @@ int main(){
     // Afficher la répartition finale des opérations sur les stations
     printf("\nRépartition finale des opérations sur les stations :\n");
     for (int i = 1; i <= sommetMax; i++) {
-        printf("Opération %d -> Station %d\n", i, stations[i]);
+        if(stations[i]!=-1)
+        {
+            printf("Opération %d -> Station %d\n", i, stations[i]);
+        }
     }
 
     // Libérer la mémoire allouée
