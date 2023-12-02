@@ -151,12 +151,28 @@ void parcourir(int **MatriceExlcusion,int tailleMatriceExclusion,int *stations, 
             stations[operation]=-1;
         }
 
+
         // Mise à jour des stations pour les opérations suivantes
         for (int j = i + 1; j <= tailleMatriceExclusion; ++j) {
             int autreOperation = indices[j];
             // Récupérer l'opération après le tri
-            if (checkIfExclusion(operation, autreOperation, MatriceExlcusion) == 1 && stations[autreOperation] == 1) {
-                stations[autreOperation] =stations[operation] + 1; // Attribuer une nouvelle station pour l'opération exclue
+            if (checkIfExclusion(operation, autreOperation, MatriceExlcusion) == 1&& stations[autreOperation] == 1) {
+                if(stations[operation]>1){
+                    for (int k = 0; k <=operation ; ++k) {
+                        if (checkIfExclusion(operation-k, autreOperation, MatriceExlcusion) == 1){
+                            stations[autreOperation] =stations[operation]+1 ;
+                        }
+                        else{
+                            stations[autreOperation] =stations[operation]-1;
+                        }
+                        printf("%d\n",k);
+                    }
+                    printf("sortie\n");
+                }
+                else{
+                    stations[autreOperation] =stations[operation]+1 ; // Attribuer une nouvelle station pour l'opération exclue
+                }
+
             }
 
 

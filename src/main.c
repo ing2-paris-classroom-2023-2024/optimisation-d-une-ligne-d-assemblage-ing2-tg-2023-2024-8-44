@@ -102,6 +102,7 @@ int main(){
 
 
     int stations[sommetMax + 1];
+
     for (int i = 1; i <= sommetMax; i++) {
         stations[i] = 1;
     }
