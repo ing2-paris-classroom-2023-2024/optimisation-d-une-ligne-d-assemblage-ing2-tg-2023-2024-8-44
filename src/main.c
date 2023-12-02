@@ -109,6 +109,7 @@ int main(){
     parcourir(MatriceExclusion, sommetMax,stations,opSommets,ordre);
     // Afficher la répartition finale des opérations sur les stations
     printf("\nRépartition finale des opérations sur les stations :\n");
+
     for (int i = 1; i <= sommetMax; i++) {
         if(stations[i]!=-1)
         {
