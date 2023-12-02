@@ -56,10 +56,6 @@ typedef struct workStation_s
     double time;
 } workStation_t;
 
-
-
-
-
 int **lectureExclusion(int tailleMatriceExclusion, char *nomFichierExclusions, int *tabOpExisant, int ordre);
 bool checkIfExclusion(int op1, int op2,int **MatriceExlcusion);
 

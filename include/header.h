@@ -37,6 +37,14 @@ typedef struct
     float tempsDeCycle;
 }t_OpTempsDeCyle;
 
+typedef struct s_stations
+{
+    int id;
+    float tempsDeCycle;
+    int nbOp;
+    char * Op;
+}t_stations;
+
 ///Partie Graphe///
 
 Graphe* creerGraphe(int nbSommets);
