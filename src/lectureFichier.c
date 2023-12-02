@@ -95,6 +95,36 @@ void lecture(int **arc1, int **arc2, int *nbLignesPrecedence, int *nbLignesOpera
     fclose(fichier);
 }
 
+void lectureTempsDeCycleOp(t_OpTempsDeCyle * Opstruct)
+{
+    /// OPERATIONS ///
+    int compteur = 0;
+    char ligne[10];
+    int nbLignesOperations = 0;
+
+    FILE *fichier = NULL;
+    fichier = fopen("../fileTexte/operations.txt", "r"); // ouverture du fichier
+    if (fichier == NULL) {
+        printf("Erreur ouverture fichier");
+        exit(1);
+    }
+
+    while (fgets(ligne, sizeof(ligne), fichier) != NULL) { // tant qu'on a des lignes on les additionne
+        (nbLignesOperations)++;
+    }
+
+    // réinitialiser le pointeur du fichier au début
+    fseek(fichier, 0, SEEK_SET);
+
+    // vérifier si la ligne n'est pas vide et si elle contient bien 2 entiers
+    while (fgets(ligne, sizeof(ligne), fichier) != NULL) {
+        if (sscanf(ligne, "%d %f", &Opstruct[compteur].idOp,&Opstruct[compteur].tempsDeCycle) == 2) {
+            compteur++;
+        }
+    }
+    fclose(fichier);
+}
+
 void affichageFichier(int nbLignesPrecedence, int nbLignesOperations, int tempsCycle, int ordre, int taille, int *tabPrecedence1, int *tabPrecedence2, int *opSommets, float *opTemps, Graphe* graphe, int sommetMax){
     printf("\nInfos du graphe:\n");
     printf("Temps de cycle: %d\n", tempsCycle);

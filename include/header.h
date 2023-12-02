@@ -31,6 +31,12 @@ typedef struct {            /// parfait rien a changer
     int station;
 } Tache;
 
+typedef struct
+{
+    int idOp;
+    float tempsDeCycle;
+}t_OpTempsDeCyle;
+
 ///Partie Graphe///
 
 Graphe* creerGraphe(int nbSommets);
@@ -39,6 +45,7 @@ void afficherGraphe(Graphe* graphe, const int *tabSommets, int sommetMax);
 
 ///Partie Lecture de fichier///
 void lecture(int **arc1, int **arc2, int *nbLignesPrecedence, int *nbLignesOperations, int *tempsCycle, int **opSommets, float **opTemps);
+void lectureTempsDeCycleOp(t_OpTempsDeCyle * Opstruct);
 void affichageFichier(int nbLignesPrecedence, int nbLignesOperations, int tempsCycle, int ordre, int taille, int *tabPrecedence1, int *tabPrecedence2, int *opSommets, float *opTemps, Graphe* graphe, int sommetMax);
 
 ///Partie precedence et temps de cycle///

@@ -55,19 +55,17 @@ typedef struct workStation_s
     double time;
 } workStation_t;
 
-typedef struct assemblyLine_s
+typedef struct s_station
 {
-    ope_t **ope;
-    workStation_t **workStation;
-    graphe_t *graph;
-    bool **unassociable;
-    double cycleTime;
-    int nbOpe;
-} assemblyLine_t;
+    int id;
+    int tempsDeCycle;
+    char * Op;
+    int nbOp;
+}t_stations;
 
 
 
 int **lectureExclusion(int tailleMatriceExclusion, char *nomFichierExclusions, int *tabOpExisant, int ordre);
 bool checkIfExclusion(int op1, int op2,int **MatriceExlcusion);
-void parcourir(int **MatriceExlcusion,int tailleMatriceExclusion, int *stations,int *tabOpExistant, int ordre);
+void parcourirExclusionToutSeul(int **MatriceExlcusion,int tailleMatriceExclusion, t_stations *stations,int *tabOpExistant, int ordre);
 #endif //OPTIMISATION_D_UNE_LIGNE_D_ASSEMBLAGE_ING2_TG_2023_2024_8_44_FONCTION_H
