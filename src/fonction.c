@@ -212,6 +212,7 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
     }
 
     for (int i = 0; i < tailleMatriceExclusion; ++i) {
+
         for (int j = i + 1; j <= tailleMatriceExclusion; ++j) {
             if (degres[indices[j]] > degres[indices[i]]) {
                 // Échange des indices
@@ -227,14 +228,17 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
     for (int i = 0; i <= tailleMatriceExclusion; ++i) {
         printf("Opération %d -> Degré %d\n", indices[i], degres[indices[i]]);
     }
+
+    float compteur = 0;
     for (int i = 0; i <= tailleMatriceExclusion; ++i) {
         int operation = indices[i];  // Récupérer l'opération après le tri
         //si l'opération n'existe pas nous la mettons dans une station spéciale
         if(degres[operation]==0||degres[operation]==-1){
             stations[operation].id=-1;
+            continue;
         }
-        printf("\n%f\n", GetTempsDeCycleToOp(OpStruct,operation,ordre));
 
+        compteur += GetTempsDeCycleToOp(OpStruct,operation,ordre);
 
         // Mise à jour des stations pour les opérations suivantes
         for (int j = i + 1; j <= tailleMatriceExclusion; ++j) {
@@ -253,10 +257,21 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
                 }
                 else{
                     stations[autreOperation].id =stations[operation].id+1 ; // Attribuer une nouvelle station pour l'opération exclue
+                    stations[autreOperation].attribue = 1;
                 }
 
             }
+            else
+            {
+                stations[operation].attribue = 1;
+                compteur += GetTempsDeCycleToOp(OpStruct,autreOperation,ordre);
+                if(compteur>10)
+                {
+                    compteur = 0;
+                }
+            }
         }
+//        printf("\n%f\n",compteur);
 
     }
 }

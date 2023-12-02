@@ -40,10 +40,12 @@ typedef struct
 typedef struct s_stations
 {
     int id;
-    float tempsDeCycle;
     int nbOp;
+    int attribue;
     char * Op;
 }t_stations;
+
+
 
 ///Partie Graphe///
 

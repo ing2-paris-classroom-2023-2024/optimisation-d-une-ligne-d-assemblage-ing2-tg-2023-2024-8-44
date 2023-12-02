@@ -109,8 +109,8 @@ int main(){
 
     for (int i = 1; i <= sommetMax; i++) {
         stations[i].id = 1;
-        stations[i].tempsDeCycle = 0;
         stations[i].nbOp=0;
+        stations[i].attribue = 0;
         stations[i].Op = NULL;
     }
     parcourirTempsDeCycleAvecExclusion(MatriceExclusion, sommetMax,stations,Opstruct,ordre);
