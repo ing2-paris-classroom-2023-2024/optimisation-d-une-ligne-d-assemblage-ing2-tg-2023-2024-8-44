@@ -109,6 +109,9 @@ int main(){
 
     for (int i = 1; i <= sommetMax; i++) {
         stations[i].id = 1;
+        stations[i].tempsDeCycle = 0;
+        stations[i].nbOp=0;
+        stations[i].Op = NULL;
     }
     parcourirExclusionToutSeul(MatriceExclusion, sommetMax,stations,opSommets,ordre);
     // Afficher la répartition finale des opérations sur les stations
