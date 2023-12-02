@@ -101,6 +101,7 @@ float GetTempsDeCycleToOp(t_OpTempsDeCyle *Opstruct, int opToCheck, int ordre)
     return 0;
 }
 
+//Test de push
 
 void parcourirExclusionToutSeul(int **MatriceExlcusion,int tailleMatriceExclusion,t_stations *stations, int *tabOpExistant, int ordre) {
     int degres[tailleMatriceExclusion + 1];

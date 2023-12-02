@@ -20,12 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="addind fonction to get Temps de cycle in exclusion and temps de cycle">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/fonction.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/fonction.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/header.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/header.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonction.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonction.c" afterDir="false" />
-    </list>
+    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="addind fonction to get Temps de cycle in exclusion and temps de cycle" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +33,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
