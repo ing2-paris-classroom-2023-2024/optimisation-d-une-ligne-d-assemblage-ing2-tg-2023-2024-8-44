@@ -119,6 +119,7 @@ int main(){
     Stack * AllStation;
     AllStation = malloc(sizeof (Stack));
     realloc(AllStation,sizeof (Stack));
+    printf("sczfzjog");
     parcourirTempsDeCycleAvecExclusion(MatriceExclusion, sommetMax,stations,Opstruct,ordre,AllStation,tempsCycle,&nbStation);
     // Afficher la répartition finale des opérations sur les stations
     printf("\nRépartition finale des opérations sur les stations :\n");
