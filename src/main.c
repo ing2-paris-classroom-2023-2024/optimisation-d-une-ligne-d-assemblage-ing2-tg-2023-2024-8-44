@@ -165,10 +165,10 @@ int main(){
 //    }
 //    free(MatriceExclusion);
 
-for(int i=0; i<ordre;i++)
-{
-    printf("%d : %f\n",Opstruct[i].idOp, Opstruct[i].tempsDeCycle);
-}
+//for(int i=0; i<ordre;i++)
+//{
+//    printf("%d : %f\n",Opstruct[i].idOp, Opstruct[i].tempsDeCycle);
+//}
 
 
 

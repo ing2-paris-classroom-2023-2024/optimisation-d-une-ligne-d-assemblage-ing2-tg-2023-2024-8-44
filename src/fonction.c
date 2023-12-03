@@ -266,7 +266,7 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
         if(a>tailleMatriceExclusion)
         {
             i++;
-            printf("changement de station vers %d\n",i+1);
+//            printf("changement de station vers %d\n",i+1);
             realloc(AllStation,sizeof (Stack)*(i+1));
             initializeStack(&AllStation[i],tailleMatriceExclusion+1);
             a=0;
@@ -275,10 +275,10 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
         bool pushOp = 1;
         if(isEmpty(&AllStation[i]))
         {
-            printf("empty\n");
+//            printf("empty\n");
             if(push(&AllStation[i],operation,tempsDeCyle, GetTempsDeCycleToOp(OpStruct,operation,ordre),degres[operation]))
             {
-                printf("push : %d\n",operation);
+//                printf("push : %d\n",operation);
                 indices[a]=0;
             }
             a++;
@@ -289,7 +289,7 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
             {
                 if(checkIfExclusion(operation,AllStation[i].operation[j],MatriceExlcusion))
                 {
-                    printf("exclusion : %d avec %d \n",AllStation[i].operation[j], operation);
+//                    printf("exclusion : %d avec %d \n",AllStation[i].operation[j], operation);
                     pushOp=0;
                     a++;
                     break;
@@ -299,7 +299,7 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
             {
                 if(push(&AllStation[i],operation,tempsDeCyle, GetTempsDeCycleToOp(OpStruct,operation,ordre),degres[operation]))
                 {
-                    printf("push : %d\n",operation);
+//                    printf("push : %d\n",operation);
                     indices[a]=0;
                 }
                 a++;
@@ -309,7 +309,7 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
                 if(isFull(&AllStation[i],tempsDeCyle))
                 {
                     i++;
-                    printf("changement de station vers %d\n",i+1);
+//                    printf("changement de station vers %d\n",i+1);
                     realloc(AllStation,sizeof (Stack)*(i+1));
                     initializeStack(&AllStation[i],tailleMatriceExclusion+1);
                     a=0;
@@ -317,7 +317,7 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
 
             }
             display(&AllStation[i]);
-            printf("%d\n",a);
+//            printf("%d\n",a);
         }
     }
 
