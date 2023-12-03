@@ -9,9 +9,11 @@ void afficher_menu() {
     printf("Menu Principal de Gestion de la Ligne d'Assemblage\n");
     printf("1. Afficher exclusion tout seul\n");
     printf("2. Afficher les contraintes d'exclusion et temps de cycle\n");
-    printf("3. Afficher les contraintes de precedence et de temps de cycle \n");
-    printf("4. Heuristique\n");
-    printf("5. Quitter\n");
+    printf("3. Afficher le graphe de precedence\n");
+    printf("4. Afficher les contraintes de precedence et de temps de cycle V1\n");
+    printf("5. Afficher les contraintes de precedence et de temps de cycle V2\n");
+    printf("6. Afficher les contraintes de precedence, exclusion et de temps de cycle\n");
+    printf("7. Quitter\n");
 }
 
 
@@ -26,7 +28,7 @@ void Menu(){
         switch(choix) {
             case 1:
             {
-
+                break;
             }
                 // Charger les données depuis les fichiers
                 break;
@@ -97,16 +99,13 @@ void Menu(){
                 realloc(AllStation,sizeof (Stack));
                 parcourirTempsDeCycleAvecExclusion(MatriceExclusion, sommetMax,stations,Opstruct,ordre,AllStation,(float)tempsCycle,&nbStation);
                 // Afficher la répartition finale des opérations sur les stations
-
-                printf("\n\n///////////////////////////////////////////////\n");
-                printf("///////// ATTRIBUTIONS DES STATIONS ///////////\n");
-                printf("///////////////////////////////////////////////\n");
-
+                printf("\n\n\n");
                 for (int i = 0; i <= nbStation; i++) {
                     printf("station : %d\n",i+1);
                     display(&AllStation[i]);
+                    printf("\n");
                 }
-
+                printf("\n\n\n");
                 // Libérer la mémoire allouée
                 for (int i = 0; i <= sommetMax; i++) {
                     free(MatriceExclusion[i]);
@@ -120,7 +119,7 @@ void Menu(){
                 free(opTemps);
                 free(sommets);
             }
-                // Afficher les contraintes d'exclusion
+
                 break;
             case 3:
             {
@@ -147,9 +146,79 @@ void Menu(){
                     ajouterArc(graphe, tabPrecedence1[i], tabPrecedence2[i]);
                 }
 
-
-                /// AFFICHAGE /// probleme avec le sommet 2
+                printf("Affichage du graphe.\n");
                 affichageFichier(nbLignesPrecedence,nbLignesOperations,tempsCycle,ordre,taille,tabPrecedence1,tabPrecedence2,opSommets,opTemps,graphe,sommetMax);
+                break;
+            }
+            case 4:
+            {
+                // Afficher les contraintes de précédence et temps de cycle
+                int *tabPrecedence1=NULL, *tabPrecedence2=NULL, *tabExclusions1=NULL, *tabExclusions2=NULL;
+                int *opSommets=NULL;
+                float *opTemps=NULL;
+                int tempsCycle = 0, nbLignesPrecedence = 0, nbLignesOperations=0, nbLignesExclusions=0;
+                int *sommets = NULL;
+
+                /// LECTURE FICHIER ///
+                lecture(&tabPrecedence1, &tabPrecedence2, &nbLignesPrecedence, &nbLignesOperations, &tempsCycle, &opSommets, &opTemps);
+
+
+                ///DONNEES GRAPHE ///
+                int ordre = nbLignesOperations;
+                int taille = nbLignesPrecedence;
+                int sommetMax = opSommets[nbLignesOperations-1];
+
+
+                /// creer le graphe ///
+                Graphe* graphe = creerGraphe(sommetMax+1);
+                for (int i=0; i<taille; i++){ // Ajouter des arcs au graphe
+                    ajouterArc(graphe, tabPrecedence1[i], tabPrecedence2[i]);
+                }
+
+
+
+                /// TACHES ///
+                Tache taches[sommetMax];
+                printf("Precedence et temps de cycle V1.\n");
+                PrecedenceEtTempsSuitee(taches, opSommets, nbLignesOperations, opTemps, sommetMax, tabPrecedence1, tabPrecedence2, taille, tempsCycle);
+
+                /// MEMOIRE ///
+                //libérer la memoire
+                free(tabPrecedence1);
+                free(tabPrecedence2);
+                free(opSommets);
+                free(opTemps);
+                free(sommets);
+                free(graphe);
+                printf("\n");
+                break;
+            }
+
+            case 5:
+            {
+
+                // Afficher les contraintes de précédence et temps de cycle
+                int *tabPrecedence1=NULL, *tabPrecedence2=NULL, *tabExclusions1=NULL, *tabExclusions2=NULL;
+                int *opSommets=NULL;
+                float *opTemps=NULL;
+                int tempsCycle = 0, nbLignesPrecedence = 0, nbLignesOperations=0, nbLignesExclusions=0;
+                int *sommets = NULL;
+
+                /// LECTURE FICHIER ///
+                lecture(&tabPrecedence1, &tabPrecedence2, &nbLignesPrecedence, &nbLignesOperations, &tempsCycle, &opSommets, &opTemps);
+
+
+                ///DONNEES GRAPHE ///
+                int ordre = nbLignesOperations;
+                int taille = nbLignesPrecedence;
+                int sommetMax = opSommets[nbLignesOperations-1];
+
+
+                /// creer le graphe ///
+                Graphe* graphe = creerGraphe(sommetMax+1);
+                for (int i=0; i<taille; i++){ // Ajouter des arcs au graphe
+                    ajouterArc(graphe, tabPrecedence1[i], tabPrecedence2[i]);
+                }
 
 
 
@@ -172,17 +241,21 @@ void Menu(){
                 free(opTemps);
                 free(sommets);
                 free(graphe);
-            }
-
+                printf("\n");
                 break;
-            case 4:
+            }
+            case 6:
+            {
                 precedenceEtExclusionEtTempsDeCycle();
                 break;
-            case 5:
-                printf("Quitter le programme.\n");
+            }
+            case 7:
+            {
+                printf("Quitter\n");
                 break;
+            }
             default:
                 printf("Choix invalide. Veuillez réessayer.\n");
         }
-    } while (choix != 5);
+    } while (choix != 7);
 }

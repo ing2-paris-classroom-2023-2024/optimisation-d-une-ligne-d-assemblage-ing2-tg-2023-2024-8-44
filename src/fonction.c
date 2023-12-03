@@ -25,7 +25,7 @@ int ** lectureExclusion(int tailleMatriceExclusion, char *nomFichierExclusions, 
     int valeurTmp,valeurTmp2;
     int **MatriceExclusionARendre;
 
-    printf("Taille de la matrice Exclusion: %d\n",tailleMatriceExclusion);
+//    printf("Taille de la matrice Exclusion: %d\n",tailleMatriceExclusion);
 
     fichierExclusions = fopen(nomFichierExclusions,"r"); // ouverture du fichier
     if (fichierExclusions == NULL){
@@ -69,17 +69,17 @@ int ** lectureExclusion(int tailleMatriceExclusion, char *nomFichierExclusions, 
     while (fgets(ligne,tailleMatriceExclusion,fichierExclusions) != NULL){
         sscanf(ligne, "%d %d",&valeurTmp,&valeurTmp2);
         MatriceExclusionARendre[valeurTmp][valeurTmp2]=1;
-        printf("%d %d\n",valeurTmp,valeurTmp2);
+//        printf("%d %d\n",valeurTmp,valeurTmp2);
     }
 
-    for(int i=0;i<(tailleMatriceExclusion+1);i++)
-    {
-        for(int j=0;j<(tailleMatriceExclusion+1);j++)
-        {
-            printf("%d ",MatriceExclusionARendre[i][j]);
-        }
-        printf("\n");
-    }
+//    for(int i=0;i<(tailleMatriceExclusion+1);i++)
+//    {
+//        for(int j=0;j<(tailleMatriceExclusion+1);j++)
+//        {
+//            printf("%d ",MatriceExclusionARendre[i][j]);
+//        }
+//        printf("\n");
+//    }
 
     fclose(fichierExclusions);
     return MatriceExclusionARendre;
@@ -253,10 +253,10 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
     }
 
     // Affichage des opérations triées par ordre décroissant de degrés
-    printf("Opérations triées par ordre décroissant de degrés :\n");
-    for (int i = 0; i <= tailleMatriceExclusion; ++i) {
-        printf("Opération %d -> Degré %d\n", indices[i], degres[indices[i]]);
-    }
+//    printf("Opérations triées par ordre décroissant de degrés :\n");
+//    for (int i = 0; i <= tailleMatriceExclusion; ++i) {
+//        printf("Opération %d -> Degré %d\n", indices[i], degres[indices[i]]);
+//    }
     int i=0;
     int a=0;
     initializeStack(&AllStation[i],tailleMatriceExclusion +1);
@@ -317,7 +317,7 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
                 }
 
             }
-            display(&AllStation[i]);
+//            display(&AllStation[i]);
 //            printf("%d\n",a);
         }
     }

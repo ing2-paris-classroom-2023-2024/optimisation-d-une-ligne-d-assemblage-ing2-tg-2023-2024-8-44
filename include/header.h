@@ -67,6 +67,7 @@ void realiserTache(int tache_id, Tache taches[], int nbTACHES);
 void initialiserTaches(Tache taches[], int *tabSommets, int nbLignesOperations, float *tempsOP, int nbTACHES);
 void PrecedenceEtTempsOpti(Tache taches[], int *opSommets, int nbLignesOperations, float *opTemps, int sommetMax, int *tabPrecedence1, int *tabPrecedence2, int taille, int tempsCycle);
 int * PrecedenceEtTempsPourExclusion(Tache taches[], int *opSommets, int nbLignesOperations, float *opTemps, int sommetMax, int *tabPrecedence1, int *tabPrecedence2, int taille, int tempsCycle);
+void PrecedenceEtTempsSuitee(Tache taches[], int *opSommets, int nbLignesOperations, float *opTemps, int sommetMax, int *tabPrecedence1, int *tabPrecedence2, int taille, int tempsCycle);
 bool checkIfTabEmpty(const int *tab,int taille);
 
 ///Gestion de menu///
