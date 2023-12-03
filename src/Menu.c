@@ -176,7 +176,7 @@ void Menu(){
 
                 break;
             case 4:
-                //Heuristique
+                precedenceEtExclusionEtTempsDeCycle();
                 break;
             case 5:
                 printf("Quitter le programme.\n");

@@ -20,16 +20,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="finish details in main.c">
-      <change afterPath="$PROJECT_DIR$/src/reunionDesCode.c" afterDir="false" />
+    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="addind excluision and precedence and temps de cycle at the same time">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileTexte/temps_cycle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fileTexte/temps_cycle.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/header.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/header.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menu.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonction.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonction.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/precedenceTemps.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/precedenceTemps.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +37,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -268,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701624694620</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="addind excluision and precedence and temps de cycle at the same time">
+      <created>1701630274437</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1701630274438</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,6 +296,7 @@
     <MESSAGE value="addind fonction to get Temps de cycle in exclusion and temps de cycle" />
     <MESSAGE value="finish details for exclusion and temps de cycle" />
     <MESSAGE value="finish details in main.c" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish details in main.c" />
+    <MESSAGE value="addind excluision and precedence and temps de cycle at the same time" />
+    <option name="LAST_COMMIT_MESSAGE" value="addind excluision and precedence and temps de cycle at the same time" />
   </component>
 </project>

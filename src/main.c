@@ -5,6 +5,6 @@
 #include "string.h"
 
 int main(){
-    precedenceEtExclusionEtTempsDeCycle();
+    Menu();
     return 0;
 }
