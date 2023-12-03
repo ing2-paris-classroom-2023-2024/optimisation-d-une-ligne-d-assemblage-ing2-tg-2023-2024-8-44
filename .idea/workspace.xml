@@ -20,13 +20,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="changes to get problem with gitHub">
-      <change afterPath="$PROJECT_DIR$/src/pileFonction.c" afterDir="false" />
+    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="push pileFonction.c">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/header.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/header.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/fonction.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/fonction.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fonction.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonction.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pileFonction.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/pileFonction.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701538274893</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="push pileFonction.c">
+      <created>1701544345094</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1701544345094</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,6 +305,7 @@
     <MESSAGE value="addind fonction to get Temps de cycle in exclusion and temps de cycle" />
     <MESSAGE value="changes To fonction.c" />
     <MESSAGE value="changes to get problem with gitHub" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes to get problem with gitHub" />
+    <MESSAGE value="push pileFonction.c" />
+    <option name="LAST_COMMIT_MESSAGE" value="push pileFonction.c" />
   </component>
 </project>

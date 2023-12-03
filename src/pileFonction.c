@@ -1,21 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-// Structure de la pile
-typedef struct {
-    int *array;     // tableau dynamique pour stocker les éléments de la pile
-    int capacity;   // capacité maximale de la pile
-    int top;        // indice du sommet de la pile
-} Stack;
+#include "fonction.h"
 
 // Initialiser une pile vide
 void initializeStack(Stack *stack, int capacity) {
-    stack->array = (int *)malloc(capacity * sizeof(int));
-    if (stack->array == NULL) {
+    stack->operation = (int *)malloc(capacity * sizeof(int));
+    if (stack->operation == NULL) {
         fprintf(stderr, "Erreur d'allocation de mémoire.\n");
         exit(EXIT_FAILURE);
     }
     stack->capacity = capacity;
+    stack->nbOpe=0;
     stack->top = -1;  // La pile est vide initialement
 }
 
@@ -25,17 +20,20 @@ int isEmpty(Stack *stack) {
 }
 
 // Vérifier si la pile est pleine
-int isFull(Stack *stack) {
-    return stack->top == stack->capacity - 1;
+int isFull(Stack *stack, float tempsDeCyleMax) {
+    return (stack->top == stack->capacity - 1|| stack->tempsDeCyle>=tempsDeCyleMax);
 }
 
 // Empiler un élément sur la pile
-void push(Stack *stack, int item) {
-    if (isFull(stack)) {
-        fprintf(stderr, "La pile est pleine. Impossible d'ajouter un nouvel élément.\n");
-        return;
+int push(Stack *stack, int item, float tempsDeCyleMax,float tempsDeCycleOp, int degre) {
+    if (isFull(stack,tempsDeCyleMax)||item ==0||degre == -1) {
+        printf("La pile est pleine. Impossible d'ajouter un nouvel élément. ou item =0 : %d : %d\n", item,degre);
+        return 0;
     }
-    stack->array[++stack->top] = item;
+    stack->operation[++stack->top] = item;
+    stack->tempsDeCyle+=tempsDeCycleOp;
+    stack->nbOpe++;
+    return 1;
 }
 
 // Dépiler un élément de la pile
@@ -44,7 +42,7 @@ int pop(Stack *stack) {
         fprintf(stderr, "La pile est vide. Impossible de dépiler un élément.\n");
         exit(EXIT_FAILURE);
     }
-    return stack->array[stack->top--];
+    return stack->operation[stack->top--];
 }
 
 // Afficher les éléments de la pile
@@ -55,33 +53,12 @@ void display(Stack *stack) {
     }
     printf("Contenu de la pile :\n");
     for (int i = 0; i <= stack->top; ++i) {
-        printf("%d ", stack->array[i]);
+        printf("%d ", stack->operation[i]);
     }
-    printf("\n");
+    printf("\n%f\n",stack->tempsDeCyle);
 }
 
 // Libérer la mémoire allouée pour la pile
 void freeStack(Stack *stack) {
-    free(stack->array);
-}
-
-int main() {
-    Stack myStack;
-    int capacity = 5;
-
-    initializeStack(&myStack, capacity);
-
-    push(&myStack, 1);
-    push(&myStack, 2);
-    push(&myStack, 3);
-
-    display(&myStack);
-
-    printf("Élément dépilé : %d\n", pop(&myStack));
-
-    display(&myStack);
-
-    freeStack(&myStack);
-
-    return 0;
+    free(stack->operation);
 }

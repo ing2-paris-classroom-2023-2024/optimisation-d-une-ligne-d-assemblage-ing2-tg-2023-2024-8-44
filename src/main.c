@@ -113,7 +113,11 @@ int main(){
         stations[i].attribue = 0;
         stations[i].Op = NULL;
     }
-    parcourirTempsDeCycleAvecExclusion(MatriceExclusion, sommetMax,stations,Opstruct,ordre);
+
+    Stack * AllStation;
+    AllStation = malloc(sizeof (Stack));
+    realloc(AllStation,sizeof (Stack));
+    parcourirTempsDeCycleAvecExclusion(MatriceExclusion, sommetMax,stations,Opstruct,ordre,AllStation,tempsCycle);
     // Afficher la répartition finale des opérations sur les stations
     printf("\nRépartition finale des opérations sur les stations :\n");
 

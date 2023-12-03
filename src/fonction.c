@@ -3,8 +3,8 @@
 //
 #include "stdio.h"
 #include "stdbool.h"
+#include "stdlib.h"
 #include "../include/fonction.h"
-#include "../include/header.h"
 
 bool checkIfOpExist(const int *tabOpExistant, int ordre, int opToCheck)
 {
@@ -183,8 +183,20 @@ void parcourirExclusionToutSeul(int **MatriceExlcusion,int tailleMatriceExclusio
     }
 }
 
+bool checkIfTabEmpty(const int *tab,int taille)
+{
+    for(int i=0;i<taille;i++)
+    {
+        if(tab[i]!=0)
+        {
+            return false;
+        }
+    }
+    return true;
+}
 
-void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatriceExclusion,t_stations *stations, t_OpTempsDeCyle *OpStruct, int ordre) {
+
+void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatriceExclusion,t_stations *stations, t_OpTempsDeCyle *OpStruct, int ordre, Stack * AllStation, float tempsDeCyle) {
     int degres[tailleMatriceExclusion + 1];
     for (int i = 0; i <= tailleMatriceExclusion; ++i) {
 
@@ -228,51 +240,78 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
     for (int i = 0; i <= tailleMatriceExclusion; ++i) {
         printf("Opération %d -> Degré %d\n", indices[i], degres[indices[i]]);
     }
+    int i=0;
+    int a=0;
+    initializeStack(&AllStation[i],tailleMatriceExclusion +1);
 
-    float compteur = 0;
-    for (int i = 0; i <= tailleMatriceExclusion; ++i) {
-        int operation = indices[i];  // Récupérer l'opération après le tri
-        //si l'opération n'existe pas nous la mettons dans une station spéciale
-        if(degres[operation]==0||degres[operation]==-1){
-            stations[operation].id=-1;
-            continue;
+
+    while (!checkIfTabEmpty(indices,tailleMatriceExclusion + 1))
+    {
+        if(a>tailleMatriceExclusion)
+        {
+            a=0;
         }
-
-        compteur += GetTempsDeCycleToOp(OpStruct,operation,ordre);
-
-        // Mise à jour des stations pour les opérations suivantes
-        for (int j = i + 1; j <= tailleMatriceExclusion; ++j) {
-            int autreOperation = indices[j];
-            // Récupérer l'opération après le tri
-            if (checkIfExclusion(operation, autreOperation, MatriceExlcusion) == 1&& stations[autreOperation].id == 1) {
-                if(stations[operation].id>1){
-                    for (int k = 0; k <=operation ; ++k) {
-                        if (checkIfExclusion(operation-k, autreOperation, MatriceExlcusion) == 1){
-                            stations[autreOperation].id = stations[operation].id+1 ;
-                        }
-                        else{
-                            stations[autreOperation].id = stations[operation].id-1;
-                        }
+        int operation = indices[a];
+        bool pushOp = 1;
+        if(isEmpty(&AllStation[i]))
+        {
+            printf("empty\n");
+            if(push(&AllStation[i],operation,tempsDeCyle, GetTempsDeCycleToOp(OpStruct,operation,ordre),degres[operation]))
+            {
+                printf("push : %d\n",operation);
+                indices[a]=0;
+            }
+            a++;
+        }
+        else
+        {
+            for(int j=0;j<AllStation[i].nbOpe;j++)
+            {
+                if(checkIfExclusion(operation,AllStation[i].operation[j],MatriceExlcusion))
+                {
+                    printf("exclusion : %d avec %d \n",AllStation[i].operation[j], operation);
+                    pushOp=0;
+                    break;
+                }
+            }
+            if(pushOp)
+            {
+                if(push(&AllStation[i],operation,tempsDeCyle, GetTempsDeCycleToOp(OpStruct,operation,ordre),degres[operation]))
+                {
+                    printf("push : %d\n",operation);
+                    indices[a]=0;
+                }
+                else
+                {
+                    if(degres[operation]==-1)
+                    {
+                        indices[operation]=0;
+                        i++;
+                        printf("changement de station vers %d\n",i+1);
+                        realloc(AllStation,sizeof (Stack)*(i+1));
+                        initializeStack(&AllStation[i],tailleMatriceExclusion+1);
+                        a=0;
                     }
                 }
-                else{
-                    stations[autreOperation].id =stations[operation].id+1 ; // Attribuer une nouvelle station pour l'opération exclue
-                    stations[autreOperation].attribue = 1;
-                }
-
+                a++;
             }
             else
             {
-                stations[operation].attribue = 1;
-                compteur += GetTempsDeCycleToOp(OpStruct,autreOperation,ordre);
-                if(compteur>10)
+                a++;
+                if(isFull(&AllStation[i],tempsDeCyle))
                 {
-                    compteur = 0;
+                    i++;
+                    printf("changement de station vers %d\n",i+1);
+                    realloc(AllStation,sizeof (Stack)*(i+1));
+                    initializeStack(&AllStation[i],tailleMatriceExclusion+1);
+                    a=0;
                 }
-            }
-        }
-//        printf("\n%f\n",compteur);
 
+            }
+            printf("station: %d  ",i+1);
+            display(&AllStation[i]);
+            printf("%d\n",a);
+        }
     }
 }
 
