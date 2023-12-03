@@ -97,7 +97,7 @@ void Menu(){
                 Stack * AllStation;
                 AllStation = malloc(sizeof (Stack));
                 realloc(AllStation,sizeof (Stack));
-                parcourirTempsDeCycleAvecExclusion(MatriceExclusion,sommetMax,Opstruct,ordre,AllStation,(float)tempsCycle,&nbStation,opSommets,ordre);
+                parcourirTempsDeCycleAvecExclusion(MatriceExclusion,sommetMax,Opstruct,ordre,AllStation,(float)tempsCycle,&nbStation);
                 // Afficher la répartition finale des opérations sur les stations
                 printf("\n\n\n");
                 for (int i = 0; i <= nbStation; i++) {
@@ -108,6 +108,8 @@ void Menu(){
                 printf("\n\n\n");
 
                 //libérer la memoire
+                free(MatriceExclusion);
+                free(AllStation);
                 free(tabPrecedence1);
                 free(tabPrecedence2);
                 free(opSommets);

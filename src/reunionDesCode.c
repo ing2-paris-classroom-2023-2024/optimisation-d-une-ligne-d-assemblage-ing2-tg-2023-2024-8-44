@@ -131,17 +131,15 @@ void precedenceEtExclusionEtTempsDeCycle()
     realloc(AllStation,sizeof (Stack));
 
     //V2:
-    parcourirTempsDeCycleAvecExclusionEtPrecedence(MatriceExclusion,sommetMax,Opstruct,ordre,AllStation,(float)tempsCycle,&nbStation,Tache,ordre-1);
+    parcourirTempsDeCycleAvecExclusionEtPrecedence(MatriceExclusion,sommetMax,Opstruct,ordre,AllStation,(float)tempsCycle,&nbStation,Tache,ordre);
     for(int i=0;i<nbStation+1;i++)
     {
         printf("Station : %d\n",i+1);
         fprintf(pf,"station :%d\n",i+1);
         display(&AllStation[i],pf);
     }
-    /// MULTI CONTRAINTE ///
-    //PrecedenceCycleContrainte(taches, opSommets, nbLignesOperations, opTemps, sommetMax, tabPrecedence1, tabPrecedence2, tabExclusions1, tabExclusions2, taille, tempsCycle);
 
-
+    free(AllStation);
     /// MEMOIRE ///
     //libérer la memoire
     free(tabPrecedence1);
