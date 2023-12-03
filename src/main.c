@@ -119,7 +119,6 @@ int main(){
     Stack * AllStation;
     AllStation = malloc(sizeof (Stack));
     realloc(AllStation,sizeof (Stack));
-    printf("sczfzjog");
     parcourirTempsDeCycleAvecExclusion(MatriceExclusion, sommetMax,stations,Opstruct,ordre,AllStation,tempsCycle,&nbStation);
     // Afficher la répartition finale des opérations sur les stations
 
@@ -137,45 +136,6 @@ int main(){
         free(MatriceExclusion[i]);
     }
     free(MatriceExclusion);
-
-
-
-//    ///Gérer les exclusions avec temps de cycle///
-//    //Lire le fichier exclusion:
-//
-//    MatriceExclusion = lectureExclusion(sommetMax,"../fileTexte/exclusions.txt",opSommets,ordre);
-//
-//    printf("%d\n", checkIfExclusion(1,4,MatriceExclusion));
-//    // Initialiser les stations à -1, indiquant qu'aucune station n'est attribuée
-//
-//    for (int i = 1; i <= sommetMax; i++) {
-//        stations[i].id = 1;
-//        stations[i].tempsDeCycle=0;
-//    }
-//    parcourirExclusionToutSeul(MatriceExclusion, sommetMax,stations,opSommets,ordre);
-//    // Afficher la répartition finale des opérations sur les stations
-//    printf("\nRépartition finale des opérations sur les stations :\n");
-//
-//    for (int i = 1; i <= sommetMax; i++) {
-//        if(stations[i].id!=-1)
-//        {
-//            printf("Opération %d -> Station %d\n", i, stations[i].id);
-//        }
-//    }
-//
-//    // Libérer la mémoire allouée
-//    for (int i = 0; i <= sommetMax; i++) {
-//        free(MatriceExclusion[i]);
-//    }
-//    free(MatriceExclusion);
-
-//for(int i=0; i<ordre;i++)
-//{
-//    printf("%d : %f\n",Opstruct[i].idOp, Opstruct[i].tempsDeCycle);
-//}
-
-
-
 
     //libérer la memoire
     free(tabPrecedence1);
