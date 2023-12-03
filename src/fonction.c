@@ -72,15 +72,6 @@ int ** lectureExclusion(int tailleMatriceExclusion, char *nomFichierExclusions, 
 //        printf("%d %d\n",valeurTmp,valeurTmp2);
     }
 
-//    for(int i=0;i<(tailleMatriceExclusion+1);i++)
-//    {
-//        for(int j=0;j<(tailleMatriceExclusion+1);j++)
-//        {
-//            printf("%d ",MatriceExclusionARendre[i][j]);
-//        }
-//        printf("\n");
-//    }
-
     fclose(fichierExclusions);
     return MatriceExclusionARendre;
 }
@@ -205,66 +196,17 @@ bool checkIfNextStation(int operation,Stack Stations)
 }
 
 
-void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatriceExclusion,t_stations *stations, t_OpTempsDeCyle *OpStruct, int ordre, Stack * AllStation, float tempsDeCyle,int *nbStation) {
+void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatriceExclusion, t_OpTempsDeCyle *OpStruct, int ordre, Stack * AllStation, float tempsDeCyle,int *nbStation, int *Tabtache, int nbTache) {
 
-    int degres[tailleMatriceExclusion + 1];
-    for (int i = 0; i <= tailleMatriceExclusion; ++i) {
 
-        //Permet de mettre les degres des  operations non exitstance a -1
-        if (MatriceExlcusion[i][i]==-1)
-        {
-            degres[i] = -1;
-        }
-        else
-        {
-            degres[i] = 0;
-            for (int j = 0; j <= tailleMatriceExclusion; ++j) {
-                if (checkIfExclusion(i, j, MatriceExlcusion) == 1) {
-                    degres[i]++;
-                };
-
-            }
-        }
-//        printf("opération %d degrés %d\n", i, degres[i]);
-    }
-    // Trie des indices en fonction des degrés (ordre décroissant)
-    int indices[tailleMatriceExclusion + 1];
-    for (int i = 0; i <= tailleMatriceExclusion; ++i) {
-        if(degres[i]==-1)
-        {
-            indices[i]=0;
-        }
-        else
-        {
-            indices[i] = i;
-        }
-    }
-
-    for (int i = 0; i < tailleMatriceExclusion; ++i) {
-
-        for (int j = i + 1; j <= tailleMatriceExclusion; ++j) {
-            if (degres[indices[j]] > degres[indices[i]]) {
-                // Échange des indices
-                int temp = indices[i];
-                indices[i] = indices[j];
-                indices[j] = temp;
-            }
-        }
-    }
-
-    // Affichage des opérations triées par ordre décroissant de degrés
-//    printf("Opérations triées par ordre décroissant de degrés :\n");
-//    for (int i = 0; i <= tailleMatriceExclusion; ++i) {
-//        printf("Opération %d -> Degré %d\n", indices[i], degres[indices[i]]);
-//    }
     int i=0;
     int a=0;
     initializeStack(&AllStation[i],tailleMatriceExclusion +1);
 
 
-    while (!checkIfTabEmpty(indices,tailleMatriceExclusion + 1))
+    while (!checkIfTabEmpty(Tabtache,nbTache))
     {
-        if(a>tailleMatriceExclusion)
+        if(a>nbTache)
         {
             i++;
 //            printf("changement de station vers %d\n",i+1);
@@ -272,15 +214,15 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
             initializeStack(&AllStation[i],tailleMatriceExclusion+1);
             a=0;
         }
-        int operation = indices[a];
+        int operation = Tabtache[a];
         bool pushOp = 1;
         if(isEmpty(&AllStation[i]))
         {
 //            printf("empty\n");
-            if(push(&AllStation[i],operation,tempsDeCyle, GetTempsDeCycleToOp(OpStruct,operation,ordre),degres[operation]))
+            if(push(&AllStation[i],operation,tempsDeCyle, GetTempsDeCycleToOp(OpStruct,operation,ordre),2))
             {
 //                printf("push : %d\n",operation);
-                indices[a]=0;
+                Tabtache[a]=0;
             }
             a++;
         }
@@ -290,7 +232,7 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
             {
                 if(checkIfExclusion(operation,AllStation[i].operation[j],MatriceExlcusion))
                 {
-//                    printf("exclusion : %d avec %d \n",AllStation[i].operation[j], operation);
+
                     pushOp=0;
                     a++;
                     break;
@@ -298,10 +240,10 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
             }
             if(pushOp)
             {
-                if(push(&AllStation[i],operation,tempsDeCyle, GetTempsDeCycleToOp(OpStruct,operation,ordre),degres[operation]))
+                if(push(&AllStation[i],operation,tempsDeCyle, GetTempsDeCycleToOp(OpStruct,operation,ordre),2))
                 {
 //                    printf("push : %d\n",operation);
-                    indices[a]=0;
+                    Tabtache[a]=0;
                 }
                 a++;
             }
@@ -317,11 +259,9 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
                 }
 
             }
-//            display(&AllStation[i]);
 //            printf("%d\n",a);
         }
     }
-
     *nbStation=i;
 }
 

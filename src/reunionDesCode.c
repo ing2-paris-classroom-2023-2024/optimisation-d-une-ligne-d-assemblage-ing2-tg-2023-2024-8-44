@@ -39,7 +39,7 @@ void parcourirTempsDeCycleAvecExclusionEtPrecedence(int **MatriceExlcusion,int t
             {
                 if(checkIfExclusion(operation,AllStation[i].operation[j],MatriceExlcusion))
                 {
-                    printf("exclusion : %d avec %d \n",AllStation[i].operation[j], operation);
+
                     pushOp=0;
                     a++;
                     break;
@@ -66,11 +66,9 @@ void parcourirTempsDeCycleAvecExclusionEtPrecedence(int **MatriceExlcusion,int t
                 }
 
             }
-            display(&AllStation[i]);
 //            printf("%d\n",a);
         }
     }
-    printf("%d\n",i);
     *nbStation=i;
 }
 
@@ -79,7 +77,7 @@ void parcourirTempsDeCycleAvecExclusionEtPrecedence(int **MatriceExlcusion,int t
 void precedenceEtExclusionEtTempsDeCycle()
 {
     // Afficher les contraintes de précédence et temps de cycle
-    int *tabPrecedence1=NULL, *tabPrecedence2=NULL, *tabExclusions1=NULL, *tabExclusions2=NULL;
+    int *tabPrecedence1=NULL, *tabPrecedence2=NULL;
     int *opSommets=NULL;
     float *opTemps=NULL;
     int tempsCycle = 0, nbLignesPrecedence = 0, nbLignesOperations=0, nbLignesExclusions=0;
@@ -114,10 +112,6 @@ void precedenceEtExclusionEtTempsDeCycle()
     }
 
 
-    /// AFFICHAGE ///
-    affichageFichier(nbLignesPrecedence,nbLignesOperations,tempsCycle,ordre,taille,tabPrecedence1,tabPrecedence2,opSommets,opTemps,graphe,sommetMax);
-
-
 
     /// TACHES ///
     Tache taches[sommetMax];
@@ -127,11 +121,6 @@ void precedenceEtExclusionEtTempsDeCycle()
 
     Tache = PrecedenceEtTempsPourExclusion(taches,opSommets,nbLignesOperations,opTemps,sommetMax,tabPrecedence1,tabPrecedence2,taille,tempsCycle);
 
-    for (int i=0;i<taille;i++)
-    {
-        printf("%d\n",Tache[i]);
-    }
-
     int nbStation=0;
 
     Stack * AllStation;
@@ -140,7 +129,6 @@ void precedenceEtExclusionEtTempsDeCycle()
 
     //V2:
     parcourirTempsDeCycleAvecExclusionEtPrecedence(MatriceExclusion,sommetMax,Opstruct,ordre,AllStation,(float)tempsCycle,&nbStation,Tache,taille);
-    printf("\n\n\n\n\n\n\nFIN\n\n\n\n\n\n");
     for(int i=0;i<nbStation+1;i++)
     {
         printf("Station : %d\n",i+1);

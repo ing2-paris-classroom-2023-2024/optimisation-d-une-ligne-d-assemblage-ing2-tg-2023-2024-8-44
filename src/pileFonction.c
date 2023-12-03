@@ -50,7 +50,7 @@ void display(Stack *stack) {
         printf("La pile est vide.\n");
         return;
     }
-    printf("Contenu de la pile :\n");
+    printf("Operation de la station :\n");
     for (int i = 0; i <= stack->top; ++i) {
         printf("%d ", stack->operation[i]);
     }

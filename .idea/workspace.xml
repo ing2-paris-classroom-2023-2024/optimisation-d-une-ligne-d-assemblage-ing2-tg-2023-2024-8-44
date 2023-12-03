@@ -20,11 +20,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="addind excluision and precedence and temps de cycle at the same time">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="make menu for main">
+      <change beforePath="$PROJECT_DIR$/include/fonction.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/fonction.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menu.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fonction.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonction.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pileFonction.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/pileFonction.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reunionDesCode.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/reunionDesCode.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701634484661</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="make menu for main">
+      <created>1701635791379</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1701635791379</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,6 +313,7 @@
     <MESSAGE value="finish details for exclusion and temps de cycle" />
     <MESSAGE value="finish details in main.c" />
     <MESSAGE value="addind excluision and precedence and temps de cycle at the same time" />
-    <option name="LAST_COMMIT_MESSAGE" value="addind excluision and precedence and temps de cycle at the same time" />
+    <MESSAGE value="make menu for main" />
+    <option name="LAST_COMMIT_MESSAGE" value="make menu for main" />
   </component>
 </project>
