@@ -114,18 +114,18 @@ int main(){
         stations[i].Op = NULL;
     }
 
+    int nbStation=0;
+
     Stack * AllStation;
     AllStation = malloc(sizeof (Stack));
     realloc(AllStation,sizeof (Stack));
-    parcourirTempsDeCycleAvecExclusion(MatriceExclusion, sommetMax,stations,Opstruct,ordre,AllStation,tempsCycle);
+    parcourirTempsDeCycleAvecExclusion(MatriceExclusion, sommetMax,stations,Opstruct,ordre,AllStation,tempsCycle,&nbStation);
     // Afficher la répartition finale des opérations sur les stations
     printf("\nRépartition finale des opérations sur les stations :\n");
 
-    for (int i = 1; i <= sommetMax; i++) {
-        if(stations[i].id!=-1)
-        {
-            printf("Opération %d -> Station %d\n", i, stations[i].id);
-        }
+    for (int i = 0; i <= nbStation; i++) {
+        printf("station : %d\n",i+1);
+        display(&AllStation[i]);
     }
 
     // Libérer la mémoire allouée

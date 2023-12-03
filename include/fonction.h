@@ -67,7 +67,7 @@ typedef struct {
 
 int **lectureExclusion(int tailleMatriceExclusion, char *nomFichierExclusions, int *tabOpExisant, int ordre);
 bool checkIfExclusion(int op1, int op2,int **MatriceExlcusion);
-void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatriceExclusion,t_stations *stations, t_OpTempsDeCyle *OpStruct, int ordre , Stack * AllStation, float tempsDeCyle);
+void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatriceExclusion,t_stations *stations, t_OpTempsDeCyle *OpStruct, int ordre , Stack * AllStation, float tempsDeCyle, int *nbStations);
 
 ///pile
 void initializeStack(Stack *stack, int capacity);
