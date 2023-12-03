@@ -206,6 +206,7 @@ bool checkIfNextStation(int operation,Stack Stations)
 
 
 void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatriceExclusion,t_stations *stations, t_OpTempsDeCyle *OpStruct, int ordre, Stack * AllStation, float tempsDeCyle,int *nbStation) {
+
     int degres[tailleMatriceExclusion + 1];
     for (int i = 0; i <= tailleMatriceExclusion; ++i) {
 
@@ -252,10 +253,10 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
     }
 
     // Affichage des opérations triées par ordre décroissant de degrés
-//    printf("Opérations triées par ordre décroissant de degrés :\n");
-//    for (int i = 0; i <= tailleMatriceExclusion; ++i) {
-//        printf("Opération %d -> Degré %d\n", indices[i], degres[indices[i]]);
-//    }
+    printf("Opérations triées par ordre décroissant de degrés :\n");
+    for (int i = 0; i <= tailleMatriceExclusion; ++i) {
+        printf("Opération %d -> Degré %d\n", indices[i], degres[indices[i]]);
+    }
     int i=0;
     int a=0;
     initializeStack(&AllStation[i],tailleMatriceExclusion +1);

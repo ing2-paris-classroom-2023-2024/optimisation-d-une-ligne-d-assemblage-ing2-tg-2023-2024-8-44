@@ -1,21 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "header.h"
 
 #define NBSTATIONS 10
-
-typedef struct {
-    int id;
-    int *predecesseurs;
-    int nb_predecesseurs;
-    int effectuee;
-    int existence;
-    float temps;
-} Tache;
-
-typedef struct {
-    int numero;
-    float temps;
-}Station;
 
 void initialiserTaches(Tache taches[], int *tabSommets, int nbLignesOperations, float *tempsOP, int nbTACHES){
     for (int i=0; i<nbTACHES; i++) {
@@ -161,40 +148,42 @@ void PrecedenceEtTempsOpti(Tache taches[], int *opSommets, int nbLignesOperation
 }
 
 
+int * PrecedenceEtTempsPourExclusion(Tache taches[], int *opSommets, int nbLignesOperations, float *opTemps, int sommetMax, int *tabPrecedence1, int *tabPrecedence2, int taille, int tempsCycle){
+    int *tabToReturn;
 
-void PrecedenceCycleContrainte(Tache taches[], int *opSommets, int nbLignesOperations, float *opTemps, int sommetMax, int *tabPrecedence1, int *tabPrecedence2, int *tabExclusion1, int *tabExclusion2, int taille, int tempsCycle){
+    tabToReturn = malloc(sizeof (int)*taille);
+
     Station *stations = (Station *)malloc(NBSTATIONS * sizeof(Station));
-    for (int i=0; i < NBSTATIONS; i++) {
+
+    for (int i=0; i < NBSTATIONS; i++){
         initialiserStation(&stations[i], i+1, 0);
     }
 
-
-    // initialiser les tâches et ajoutez des dépendances
+    // initialiser les tâches et ajoutez les dépendances
     initialiserTaches(taches,opSommets,nbLignesOperations, opTemps, sommetMax);
     for (int i=0; i<taille; i++){
         ajouterDependance(tabPrecedence1[i], tabPrecedence2[i], taches);
     }
 
-    FILE *fichier = NULL;
-    fichier = fopen("sauvegarde.txt", "w"); // ouverture du fichier
-
-    // Réaliser toutes les tâches
-    int tache_non_realisee = 1;
+    // Réalisez toutes les tâches
+    int tache_non_realisee = 1;         //on peut encore optimiser ceci pour ajouter une tache a la station 1 car il reste de la place pour certaines op
+    int compteur=0;
     while (tache_non_realisee){
         tache_non_realisee = 0;
-        for (int i=0; i<sommetMax; i++){ // parcourir les taches
+        for (int i=0; i<sommetMax; i++){
 
-            if (!taches[i].effectuee && taches[i].nb_predecesseurs == 0 && taches[i].existence == 1) {
+            if (!taches[i].effectuee && taches[i].nb_predecesseurs == 0 && taches[i].existence == 1){
+                tabToReturn[compteur]= taches[i].id;
+                compteur++;
+                if(compteur>taille)
+                {
+                    return tabToReturn;
+                }
                 realiserTache(taches[i].id, taches, sommetMax);
                 tache_non_realisee = 1;
-                for (int j=0; j < NBSTATIONS; j++) { // parcourir les stations
-
-                    if (stations[j].temps + taches[i].temps <= (float) tempsCycle) { //verification si on peut ajouter la tache a la station
+                for (int j=0; j < NBSTATIONS; j++) {
+                    if (stations[j].temps + taches[i].temps <= (float)tempsCycle){
                         stations[j].temps += taches[i].temps;
-                        printf("Tache %d | Temps de l'operation %.2f | Station %d | Temps de cycle %.2f\n",
-                               taches[i].id, taches[i].temps, stations[j].numero, stations[j].temps);
-                        fprintf(fichier, "Tache %d | Temps de l'operation %.2f | Station %d | Temps de cycle %.2f\n",
-                                taches[i].id, taches[i].temps, stations[j].numero, stations[j].temps);
                         break;
                     }
                 }
@@ -202,5 +191,5 @@ void PrecedenceCycleContrainte(Tache taches[], int *opSommets, int nbLignesOpera
             }
         }
     }
-
+    return tabToReturn;
 }
