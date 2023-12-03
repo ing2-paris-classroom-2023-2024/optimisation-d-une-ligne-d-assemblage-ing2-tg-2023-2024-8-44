@@ -109,12 +109,11 @@ void Menu(){
                             counterStation1 += GetTempsDeCycleToOp(Opstruct, i, ordre);
 
                         } else if (stations[i].id == 2) {
+                            strcat(operationsByStation2[stations[i].id], temp);
+                            counterStation2 += GetTempsDeCycleToOp(Opstruct, i, ordre);
                         }
-                        strcat(operationsByStation2[stations[i].id], temp);
-                        counterStation2 += GetTempsDeCycleToOp(Opstruct, i, ordre);
                     }
                 }
-
 
                 printf("\nAffichage des opérations par station :\n");
 
@@ -124,6 +123,7 @@ void Menu(){
                 printf("\nStation %d :\n", stations[4].id);
                 printf("%s\n", operationsByStation2[stations[4].id]);
                 printf("\nCompteur Station 2: %.2f\n", counterStation2);
+
                 // Charger les données depuis les fichiers
                 break;
             }
