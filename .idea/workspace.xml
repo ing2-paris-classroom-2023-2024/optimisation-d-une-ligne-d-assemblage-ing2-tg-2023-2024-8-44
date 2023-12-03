@@ -20,11 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="make menu for main">
-      <change beforePath="$PROJECT_DIR$/fileTexte/temps_cycle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fileTexte/temps_cycle.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonction.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonction.c" afterDir="false" />
-    </list>
+    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="chainging details" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -296,7 +292,35 @@
       <option name="project" value="LOCAL" />
       <updated>1701637030650</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="chainging details">
+      <created>1701638538325</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1701638538325</updated>
+    </task>
+    <task id="LOCAL-00027" summary="chainging details">
+      <created>1701639541912</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1701639541912</updated>
+    </task>
+    <task id="LOCAL-00028" summary="chainging details">
+      <created>1701639619303</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1701639619303</updated>
+    </task>
+    <task id="LOCAL-00029" summary="chainging details">
+      <created>1701639672608</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1701639672608</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,6 +350,7 @@
     <MESSAGE value="finish details in main.c" />
     <MESSAGE value="addind excluision and precedence and temps de cycle at the same time" />
     <MESSAGE value="make menu for main" />
-    <option name="LAST_COMMIT_MESSAGE" value="make menu for main" />
+    <MESSAGE value="chainging details" />
+    <option name="LAST_COMMIT_MESSAGE" value="chainging details" />
   </component>
 </project>

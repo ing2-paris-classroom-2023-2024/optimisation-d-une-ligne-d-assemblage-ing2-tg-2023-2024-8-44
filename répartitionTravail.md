@@ -8,4 +8,4 @@ Répatition du travail:
 -contrainte de précédence et de temps (Théo et Simon)
 
 -contrainte de precedence, exclusion et de temps (Matheo)
-Notice : Pour le menu faire le 6 en premier. -> probleme d allocation de memoire
+Notice : Pour le menu faire le 6 en premier. -> probleme d'allocation de memoire
