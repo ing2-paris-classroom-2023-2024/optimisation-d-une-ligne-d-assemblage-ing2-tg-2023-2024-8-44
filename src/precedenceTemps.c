@@ -166,7 +166,6 @@ void PrecedenceCycleContrainte(Tache taches[], int *opSommets, int nbLignesOpera
     Station *stations = (Station *)malloc(NBSTATIONS * sizeof(Station));
     for (int i=0; i < NBSTATIONS; i++) {
         initialiserStation(&stations[i], i+1, 0);
-        printf("Station %d:\n", stations[i].numero);
     }
 
 
