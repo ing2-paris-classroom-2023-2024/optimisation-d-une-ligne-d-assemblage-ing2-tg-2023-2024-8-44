@@ -101,7 +101,7 @@ void Menu(){
                 }
                 for (int i = 1; i <= sommetMax; i++) {
                     if (stations[i].id != -1) {
-                        printf("Opération %d -> Station %d\n", i, stations[i].id);
+                        //printf("Opération %d -> Station %d\n", i, stations[i].id);
                         char temp[50];
                         snprintf(temp, sizeof(temp), " %d  ", i);
                         if (stations[i].id == 1) {
@@ -122,7 +122,7 @@ void Menu(){
                 printf("\nCompteur Station 1: %.2f\n", counterStation1);
                 printf("\nStation %d :\n", stations[4].id);
                 printf("%s\n", operationsByStation2[stations[4].id]);
-                printf("\nCompteur Station 2: %.2f\n", counterStation2);
+                printf("\nCompteur Station 2: %.2f\n\n", counterStation2);
 
                 // Charger les données depuis les fichiers
                 break;

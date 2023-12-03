@@ -314,7 +314,7 @@ void parcourirExclusion(int **MatriceExlcusion,int tailleMatriceExclusion,t_stat
 
             }
         }
-        printf("opération %d degrés %d\n", i, degres[i]);
+       // printf("opération %d degrés %d\n", i, degres[i]);
     }
     // Trie des indices en fonction des degrés (ordre décroissant)
     int indices[tailleMatriceExclusion + 1];
@@ -333,9 +333,9 @@ void parcourirExclusion(int **MatriceExlcusion,int tailleMatriceExclusion,t_stat
         }
     }
     // Affichage des opérations triées par ordre décroissant de degrés
-    printf("Opérations triées par ordre décroissant de degrés :\n");
+   // printf("Opérations triées par ordre décroissant de degrés :\n");
     for (int i = 0; i <= tailleMatriceExclusion; ++i) {
-        printf("Opération %d -> Degré %d\n", indices[i], degres[indices[i]]);
+        //printf("Opération %d -> Degré %d\n", indices[i], degres[indices[i]]);
     }
     int operation=0;
     float currentStation=stations[operation].tempsDeCycle;
