@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "../include/header.h"
 #include "../include/fonction.h"
+#include "string.h"
 
 int main(){
     int **MatriceExclusion = NULL;
@@ -109,10 +110,54 @@ int main(){
 
     for (int i = 1; i <= sommetMax; i++) {
         stations[i].id = 1;
-        stations[i].nbOp=0;
-        stations[i].attribue = 0;
+        stations[i].tempsDeCycle = 0;
+        stations[i].nbOp = 0;
         stations[i].Op = NULL;
     }
+    parcourirExclusion(MatriceExclusion, sommetMax, stations, Opstruct, ordre);
+    // Afficher la répartition finale des opérations sur les stations
+    printf("\nRépartition finale des opérations sur les stations :\n");
+    char *operationsByStation1[sommetMax + 1];
+    char *operationsByStation2[sommetMax + 1];
+    for (int i = 1; i <= sommetMax; i++) {
+        operationsByStation1[i] = malloc(256 * sizeof(char));
+        operationsByStation2[i] = malloc(256 * sizeof(char));
+        // Assurez-vous de gérer les erreurs d'allocation comme cela a été fait dans votre code précédent
+    }
+    // Initialisation des compteurs pour chaque station
+    float counterStation1 = 0;
+    float counterStation2 = 0;
+    // Initialisation des tableaux de chaînes de caractères
+    for (int i = 1; i <= sommetMax; i++) {
+        operationsByStation1[i][0] = '\0';
+        operationsByStation2[i][0] = '\0';
+    }
+    for (int i = 1; i <= sommetMax; i++) {
+        if (stations[i].id != -1) {
+            printf("Opération %d -> Station %d\n", i, stations[i].id);
+            char temp[50];
+            snprintf(temp, sizeof(temp), " %d  ", i);
+            if (stations[i].id == 1) {
+                strcat(operationsByStation1[stations[i].id], temp);
+                counterStation1 += GetTempsDeCycleToOp(Opstruct, i, ordre);
+
+            } else if (stations[i].id == 2) {
+                strcat(operationsByStation2[stations[i].id], temp);
+                counterStation2 += GetTempsDeCycleToOp(Opstruct, i, ordre);
+            }
+        }
+    }
+
+    printf("\nAffichage des opérations par station :\n");
+
+    printf("Station %d :\n", stations[1].id);
+    printf("%s\n", operationsByStation1[stations[1].id]);
+    printf("\nCompteur Station 1: %.2f\n", counterStation1);
+    printf("\nStation %d :\n", stations[4].id);
+    printf("%s\n", operationsByStation2[stations[4].id]);
+    printf("\nCompteur Station 2: %.2f\n", counterStation2);
+
+
 
     int nbStation=0;
 

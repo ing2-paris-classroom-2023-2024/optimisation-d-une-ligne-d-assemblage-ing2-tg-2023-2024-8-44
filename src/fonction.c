@@ -1,4 +1,4 @@
-//
+///
 // Created by mathe on 11/11/2023.
 //
 #include "stdio.h"
@@ -179,7 +179,7 @@ void parcourirExclusionToutSeul(int **MatriceExlcusion,int tailleMatriceExclusio
 
             }
         }
-        
+
     }
 }
 
@@ -324,3 +324,82 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
     *nbStation=i;
 }
 
+void parcourirExclusion(int **MatriceExlcusion,int tailleMatriceExclusion,t_stations *stations, t_OpTempsDeCyle *OpStruct, int ordre)
+{
+    int degres[tailleMatriceExclusion + 1];
+    for (int i = 0; i <= tailleMatriceExclusion; ++i) {
+
+        //Permet de mettre les degres des  operations non exitstance a -1
+        if (MatriceExlcusion[i][i]==-1)
+        {
+            degres[i] = -1;
+        }
+        else
+        {
+            degres[i] = 0;
+            for (int j = 0; j <= tailleMatriceExclusion; ++j) {
+                if (checkIfExclusion(i, j, MatriceExlcusion) == 1) {
+                    degres[i]++;
+                };
+
+            }
+        }
+        printf("opération %d degrés %d\n", i, degres[i]);
+    }
+    // Trie des indices en fonction des degrés (ordre décroissant)
+    int indices[tailleMatriceExclusion + 1];
+    for (int i = 0; i <= tailleMatriceExclusion; ++i) {
+        indices[i] = i;
+    }
+
+    for (int i = 0; i < tailleMatriceExclusion; ++i) {
+        for (int j = i + 1; j <= tailleMatriceExclusion; ++j) {
+            if (degres[indices[j]] > degres[indices[i]]) {
+                // Échange des indices
+                int temp = indices[i];
+                indices[i] = indices[j];
+                indices[j] = temp;
+            }
+        }
+    }
+    // Affichage des opérations triées par ordre décroissant de degrés
+    printf("Opérations triées par ordre décroissant de degrés :\n");
+    for (int i = 0; i <= tailleMatriceExclusion; ++i) {
+        printf("Opération %d -> Degré %d\n", indices[i], degres[indices[i]]);
+    }
+    int operation=0;
+    float currentStation=stations[operation].tempsDeCycle;
+
+    for (int i = 0; i <= tailleMatriceExclusion; ++i) {
+        operation = indices[i];  // Récupérer l'opération après le tri
+        //si l'opération n'existe pas nous la mettons dans une station spéciale
+        if(degres[operation]==-1){
+            stations[operation].id=-1;
+        }
+        currentStation+=GetTempsDeCycleToOp(OpStruct,operation,ordre);
+        printf("\n%f\n", currentStation);
+
+        // Mise à jour des stations pour les opérations suivantes
+        for (int j = i + 1; j <= tailleMatriceExclusion; ++j) {
+            int autreOperation = indices[j];
+            // Récupérer l'opération après le tri
+            if (checkIfExclusion(operation, autreOperation, MatriceExlcusion) == 1&& stations[autreOperation].id == 1) {
+                if(stations[operation].id>1){
+                    for (int k = 0; k <=operation ; ++k) {
+                        if (checkIfExclusion(operation-k, autreOperation, MatriceExlcusion) == 1){
+                            stations[autreOperation].id = stations[operation].id+1 ;
+                        }
+                        else{
+                            stations[autreOperation].id = stations[operation].id-1;
+                        }
+                    }
+                }
+                else{
+                    stations[autreOperation].id =stations[operation].id+1 ; // Attribuer une nouvelle station pour l'opération exclue
+                }
+
+            }
+        }
+
+    }
+}

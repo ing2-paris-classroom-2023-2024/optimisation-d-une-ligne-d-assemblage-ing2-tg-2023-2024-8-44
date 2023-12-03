@@ -43,6 +43,7 @@ typedef struct s_stations
     int nbOp;
     int attribue;
     char * Op;
+    float tempsDeCycle;
 }t_stations;
 
 
