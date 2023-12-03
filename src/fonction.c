@@ -316,7 +316,7 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
                 }
 
             }
-//            display(&AllStation[i]);
+            display(&AllStation[i]);
 //            printf("%d\n",a);
         }
     }

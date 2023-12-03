@@ -26,8 +26,7 @@ int isFull(Stack *stack, float tempsDeCyleMax, float tempsDeCycleOp) {
 
 // Empiler un élément sur la pile
 int push(Stack *stack, int item, float tempsDeCyleMax,float tempsDeCycleOp, int degre) {
-    if (isFull(stack,tempsDeCyleMax,tempsDeCycleOp)||degre == -1) {
-//       \\
+    if (isFull(stack,tempsDeCyleMax,tempsDeCycleOp)||degre == -1||item==0) {
         return 0;
     }
     stack->operation[++stack->top] = item;
