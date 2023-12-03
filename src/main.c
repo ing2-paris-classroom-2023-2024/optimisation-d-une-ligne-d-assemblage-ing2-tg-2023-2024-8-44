@@ -122,7 +122,10 @@ int main(){
     printf("sczfzjog");
     parcourirTempsDeCycleAvecExclusion(MatriceExclusion, sommetMax,stations,Opstruct,ordre,AllStation,tempsCycle,&nbStation);
     // Afficher la répartition finale des opérations sur les stations
-    printf("\nRépartition finale des opérations sur les stations :\n");
+
+    printf("\n\n///////////////////////////////////////////////\n");
+    printf("///////// ATTRIBUTIONS DES STATIONS ///////////\n");
+    printf("///////////////////////////////////////////////\n");
 
     for (int i = 0; i <= nbStation; i++) {
         printf("station : %d\n",i+1);

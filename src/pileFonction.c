@@ -55,7 +55,7 @@ void display(Stack *stack) {
     for (int i = 0; i <= stack->top; ++i) {
         printf("%d ", stack->operation[i]);
     }
-    printf("\n%f\n",stack->tempsDeCyle);
+    printf("\ntemps de cycle de la station : %f\n",stack->tempsDeCyle);
 }
 
 // Libérer la mémoire allouée pour la pile
