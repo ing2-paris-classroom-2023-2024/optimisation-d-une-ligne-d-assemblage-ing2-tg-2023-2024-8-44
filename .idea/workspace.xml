@@ -20,12 +20,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="push pileFonction.c">
+    <list default="true" id="16dbc3a3-7aa2-4a66-afc6-154a6559b11c" name="Changes" comment="finish exclusions and temps de cycle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/fonction.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/fonction.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fonction.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonction.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pileFonction.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/pileFonction.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,7 +273,28 @@
       <option name="project" value="LOCAL" />
       <updated>1701544345094</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="push pileFonction.c and fonction.c">
+      <created>1701601231757</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1701601231757</updated>
+    </task>
+    <task id="LOCAL-00024" summary="finish exclusions and temps de cycle">
+      <created>1701602887967</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1701602887967</updated>
+    </task>
+    <task id="LOCAL-00025" summary="finish exclusions and temps de cycle">
+      <created>1701603123819</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1701603123819</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,6 +323,8 @@
     <MESSAGE value="changes To fonction.c" />
     <MESSAGE value="changes to get problem with gitHub" />
     <MESSAGE value="push pileFonction.c" />
-    <option name="LAST_COMMIT_MESSAGE" value="push pileFonction.c" />
+    <MESSAGE value="push pileFonction.c and fonction.c" />
+    <MESSAGE value="finish exclusions and temps de cycle" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish exclusions and temps de cycle" />
   </component>
 </project>

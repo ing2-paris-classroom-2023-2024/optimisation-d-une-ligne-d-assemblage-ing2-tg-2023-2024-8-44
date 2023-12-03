@@ -72,7 +72,7 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
 ///pile
 void initializeStack(Stack *stack, int capacity);
 int isEmpty(Stack *stack);
-int isFull(Stack *stack, float tempsDeCyleMax);
+int isFull(Stack *stack, float tempsDeCyleMax, float tempsDeCycleOp);
 int push(Stack *stack, int item, float tempsDeCyleMax,float tempsDeCycleOp, int degre);
 int pop(Stack *stack);
 void display(Stack *stack);

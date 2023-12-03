@@ -20,13 +20,13 @@ int isEmpty(Stack *stack) {
 }
 
 // Vérifier si la pile est pleine
-int isFull(Stack *stack, float tempsDeCyleMax) {
-    return (stack->top == stack->capacity - 1|| stack->tempsDeCyle>=tempsDeCyleMax);
+int isFull(Stack *stack, float tempsDeCyleMax, float tempsDeCycleOp) {
+    return (stack->top == stack->capacity - 1|| stack->tempsDeCyle+tempsDeCycleOp>=tempsDeCyleMax);
 }
 
 // Empiler un élément sur la pile
 int push(Stack *stack, int item, float tempsDeCyleMax,float tempsDeCycleOp, int degre) {
-    if (isFull(stack,tempsDeCyleMax)||degre == -1) {
+    if (isFull(stack,tempsDeCyleMax,tempsDeCycleOp)||degre == -1) {
         printf("La pile est pleine. Impossible d'ajouter un nouvel élément ou degre =-1 : %d : %d\n", item,degre);
         return 0;
     }

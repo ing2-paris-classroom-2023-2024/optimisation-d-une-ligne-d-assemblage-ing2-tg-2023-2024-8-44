@@ -306,7 +306,7 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
             }
             else
             {
-                if(isFull(&AllStation[i],tempsDeCyle))
+                if(isFull(&AllStation[i],tempsDeCyle, GetTempsDeCycleToOp(OpStruct,operation,ordre)))
                 {
                     i++;
 //                    printf("changement de station vers %d\n",i+1);
