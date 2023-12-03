@@ -293,10 +293,10 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
     }
     *nbStation=i;
 }
-
+///ALGORITHME DE WELSH POWELL
 void parcourirExclusion(int **MatriceExlcusion,int tailleMatriceExclusion,t_stations *stations, t_OpTempsDeCyle *OpStruct, int ordre)
 {
-    int degres[tailleMatriceExclusion + 1];
+    int degres[tailleMatriceExclusion + 1];//tableau comportant le degrés des operations
     for (int i = 0; i <= tailleMatriceExclusion; ++i) {
 
         //Permet de mettre les degres des  operations non exitstance a -1
@@ -309,7 +309,7 @@ void parcourirExclusion(int **MatriceExlcusion,int tailleMatriceExclusion,t_stat
             degres[i] = 0;
             for (int j = 0; j <= tailleMatriceExclusion; ++j) {
                 if (checkIfExclusion(i, j, MatriceExlcusion) == 1) {
-                    degres[i]++;
+                    degres[i]++;// affectation des degrés a chaque opération en fonction des exclusions
                 };
 
             }
@@ -325,7 +325,7 @@ void parcourirExclusion(int **MatriceExlcusion,int tailleMatriceExclusion,t_stat
     for (int i = 0; i < tailleMatriceExclusion; ++i) {
         for (int j = i + 1; j <= tailleMatriceExclusion; ++j) {
             if (degres[indices[j]] > degres[indices[i]]) {
-                // Échange des indices
+                // Échange des indices afin de mettre les opération au degrés les plus forts en premier
                 int temp = indices[i];
                 indices[i] = indices[j];
                 indices[j] = temp;
@@ -346,8 +346,8 @@ void parcourirExclusion(int **MatriceExlcusion,int tailleMatriceExclusion,t_stat
         if(degres[operation]==-1){
             stations[operation].id=-1;
         }
-        currentStation+=GetTempsDeCycleToOp(OpStruct,operation,ordre);
-        printf("\n%f\n", currentStation);
+        //currentStation+=GetTempsDeCycleToOp(OpStruct,operation,ordre);
+        //printf("\n%f\n", currentStation);
 
         // Mise à jour des stations pour les opérations suivantes
         for (int j = i + 1; j <= tailleMatriceExclusion; ++j) {
@@ -360,7 +360,7 @@ void parcourirExclusion(int **MatriceExlcusion,int tailleMatriceExclusion,t_stat
                             stations[autreOperation].id = stations[operation].id+1 ;
                         }
                         else{
-                            stations[autreOperation].id = stations[operation].id-1;
+                            stations[autreOperation].id = stations[operation].id-1;//attribuer la station précdente si l'opération n'y a aucune exclusion
                         }
                     }
                 }
