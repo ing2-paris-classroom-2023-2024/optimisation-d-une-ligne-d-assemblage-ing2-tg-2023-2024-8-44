@@ -131,7 +131,7 @@ void precedenceEtExclusionEtTempsDeCycle()
     realloc(AllStation,sizeof (Stack));
 
     //V2:
-    parcourirTempsDeCycleAvecExclusionEtPrecedence(MatriceExclusion,sommetMax,Opstruct,ordre,AllStation,(float)tempsCycle,&nbStation,Tache,taille);
+    parcourirTempsDeCycleAvecExclusionEtPrecedence(MatriceExclusion,sommetMax,Opstruct,ordre,AllStation,(float)tempsCycle,&nbStation,Tache,ordre-1);
     for(int i=0;i<nbStation+1;i++)
     {
         printf("Station : %d\n",i+1);

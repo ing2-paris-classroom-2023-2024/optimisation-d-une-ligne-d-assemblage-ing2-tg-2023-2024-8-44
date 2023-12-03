@@ -97,20 +97,15 @@ void Menu(){
                 Stack * AllStation;
                 AllStation = malloc(sizeof (Stack));
                 realloc(AllStation,sizeof (Stack));
-                parcourirTempsDeCycleAvecExclusion(MatriceExclusion,sommetMax,Opstruct,ordre,AllStation,(float)tempsCycle,&nbStation,opSommets,nbLignesOperations);
+                parcourirTempsDeCycleAvecExclusion(MatriceExclusion,sommetMax,Opstruct,ordre,AllStation,(float)tempsCycle,&nbStation,opSommets,ordre);
                 // Afficher la répartition finale des opérations sur les stations
                 printf("\n\n\n");
                 for (int i = 0; i <= nbStation; i++) {
                     printf("station : %d\n",i+1);
-//                    display(&AllStation[i]);
+                    display(&AllStation[i],NULL);
                     printf("\n");
                 }
                 printf("\n\n\n");
-                // Libérer la mémoire allouée
-                for (int i = 0; i <= sommetMax; i++) {
-                    free(MatriceExclusion[i]);
-                }
-                free(MatriceExclusion);
 
                 //libérer la memoire
                 free(tabPrecedence1);

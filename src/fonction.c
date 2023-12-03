@@ -197,7 +197,39 @@ bool checkIfNextStation(int operation,Stack Stations)
 
 
 void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatriceExclusion, t_OpTempsDeCyle *OpStruct, int ordre, Stack * AllStation, float tempsDeCyle,int *nbStation, int *Tabtache, int nbTache) {
+    int degres[nbTache+1];
+    for (int i = 0; i <= nbTache; ++i) {
 
+        //Permet de mettre les degres des  operations non exitstance a -1
+        if (MatriceExlcusion[Tabtache[i]][Tabtache[i]]==-1)
+        {
+            degres[i] = -1;
+        }
+        else
+        {
+            degres[i] = 0;
+            for (int j = 0; j <= tailleMatriceExclusion; ++j) {
+                if (checkIfExclusion(i, j, MatriceExlcusion) == 1) {
+                    degres[i]++;
+                };
+
+            }
+        }
+        printf("opération %d degrés %d\n", i, degres[i]);
+    }
+
+    // Trie des indices en fonction des degrés (ordre décroissant)
+
+    for (int i = 0; i < nbTache; ++i) {
+        for (int j = i + 1; j <= nbTache; ++j) {
+            if (degres[Tabtache[j]] > degres[Tabtache[i]]) {
+                // Échange des indices
+                int temp = Tabtache[i];
+                Tabtache[i] = Tabtache[j];
+                Tabtache[j] = temp;
+            }
+        }
+    }
 
     int i=0;
     int a=0;
@@ -215,13 +247,14 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
             a=0;
         }
         int operation = Tabtache[a];
+        printf("%d\n",operation);
         bool pushOp = 1;
         if(isEmpty(&AllStation[i]))
         {
 //            printf("empty\n");
             if(push(&AllStation[i],operation,tempsDeCyle, GetTempsDeCycleToOp(OpStruct,operation,ordre),2))
             {
-//                printf("push : %d\n",operation);
+                printf("push : %d\n",operation);
                 Tabtache[a]=0;
             }
             a++;
@@ -260,6 +293,7 @@ void parcourirTempsDeCycleAvecExclusion(int **MatriceExlcusion,int tailleMatrice
 
             }
 //            printf("%d\n",a);
+            display(&AllStation[i],NULL);
         }
     }
     *nbStation=i;
