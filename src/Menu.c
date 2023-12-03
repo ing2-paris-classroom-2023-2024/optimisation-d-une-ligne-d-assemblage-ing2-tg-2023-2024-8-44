@@ -102,7 +102,7 @@ void Menu(){
                 printf("\n\n\n");
                 for (int i = 0; i <= nbStation; i++) {
                     printf("station : %d\n",i+1);
-                    display(&AllStation[i]);
+//                    display(&AllStation[i]);
                     printf("\n");
                 }
                 printf("\n\n\n");

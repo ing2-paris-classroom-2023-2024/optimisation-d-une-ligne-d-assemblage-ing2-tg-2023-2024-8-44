@@ -77,6 +77,9 @@ void parcourirTempsDeCycleAvecExclusionEtPrecedence(int **MatriceExlcusion,int t
 void precedenceEtExclusionEtTempsDeCycle()
 {
     // Afficher les contraintes de précédence et temps de cycle
+
+    FILE *pf =NULL;
+    pf = fopen("../fileTexte/sauvegarde.txt","w");
     int *tabPrecedence1=NULL, *tabPrecedence2=NULL;
     int *opSommets=NULL;
     float *opTemps=NULL;
@@ -132,7 +135,8 @@ void precedenceEtExclusionEtTempsDeCycle()
     for(int i=0;i<nbStation+1;i++)
     {
         printf("Station : %d\n",i+1);
-        display(&AllStation[i]);
+        fprintf(pf,"station :%d\n",i+1);
+        display(&AllStation[i],pf);
     }
     /// MULTI CONTRAINTE ///
     //PrecedenceCycleContrainte(taches, opSommets, nbLignesOperations, opTemps, sommetMax, tabPrecedence1, tabPrecedence2, tabExclusions1, tabExclusions2, taille, tempsCycle);
@@ -146,5 +150,6 @@ void precedenceEtExclusionEtTempsDeCycle()
     free(opTemps);
     free(sommets);
     free(graphe);
+    fclose(pf);
 }
 

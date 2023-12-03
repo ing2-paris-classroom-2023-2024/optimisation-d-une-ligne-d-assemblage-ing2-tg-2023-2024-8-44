@@ -45,16 +45,19 @@ int pop(Stack *stack) {
 }
 
 // Afficher les éléments de la pile
-void display(Stack *stack) {
+void display(Stack *stack, FILE * fichier) {
     if (isEmpty(stack)) {
         printf("La pile est vide.\n");
         return;
     }
     printf("Operation de la station :\n");
+    fprintf(fichier, "Operation de la station :\n");
     for (int i = 0; i <= stack->top; ++i) {
+        fprintf(fichier,"%d ", stack->operation[i]);
         printf("%d ", stack->operation[i]);
     }
     printf("\ntemps de cycle de la station : %.2f\n",stack->tempsDeCyle);
+    fprintf(fichier,"\ntemps de cycle de la station : %.2f\n", stack->tempsDeCyle);
 }
 
 // Libérer la mémoire allouée pour la pile
